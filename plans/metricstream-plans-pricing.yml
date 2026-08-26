@@ -1,0 +1,40 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  MetricStream site sweep 2026-08-25 — sitemap.xml (1,232 URLs, no /pricing path),
+  https://www.metricstream.com/pricing.html (404),
+  https://www.metricstream.com/platform/apis.htm, and the conversion paths
+  https://www.metricstream.com/about-us/get-started.htm,
+  https://info.metricstream.com/get-a-demo.html, https://www.metricstream.com/about-us/lets-talk.html.
+summary: >-
+  MetricStream publishes NO pricing. There is no pricing page anywhere on metricstream.com — the
+  1,232-URL sitemap contains none, and /pricing.html returns 404. Every commercial path is a
+  contact-sales or request-a-demo form. There is no free tier, no trial, no self-serve signup, and
+  no published price for API access; the APIs are a capability of an enterprise subscription rather
+  than a separately-metered product. Third-party benchmark sites quote six- and seven-figure annual
+  figures, but those are NOT provider-published and are deliberately not recorded here as plans.
+plan_count: 0
+pricing_model: enterprise contact-sales, quote-only
+free_tier: false
+free_trial: false
+self_serve_signup: false
+api_metered_separately: false
+public_pricing_page: null
+plans: []
+probes:
+- url: https://www.metricstream.com/pricing.html
+  status: 404
+- url: https://www.metricstream.com/sitemap.xml
+  status: 200
+  finding: no URL matching /pricing or /plans among 1,232 entries
+- url: https://www.metricstream.com/about-us/get-started.htm
+  status: 200
+  finding: contact/demo form, not a signup
+- url: https://info.metricstream.com/get-a-demo.html
+  status: 200
+  finding: demo request form
+contract_surface: https://www.metricstream.com/customer-agreements
+note: >-
+  For an enterprise GRC platform this is unremarkable and is not scored as a failure of intent — but
+  it does mean a developer cannot establish what API access costs, or get any access at all, without
+  a sales conversation.

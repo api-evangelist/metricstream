@@ -1,0 +1,87 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcGRC%20API%20Overview.html,
+  https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html,
+  https://www.metricstream.com/about-us/trust-center.htm, and host probes of
+  status.metricstream.com / trust.metricstream.com — all 2026-08-25.
+summary: >-
+  MetricStream publishes a real, specific API VERSIONING and COMPATIBILITY policy in its own developer
+  documentation — more than most enterprise vendors — and explicitly warns that the APIs are still
+  evolving. It publishes no public status page, no deprecation policy with dates or Sunset headers,
+  and no public SLA document.
+versioning:
+  documented: true
+  scheme: major.minor path segment (EXTERNAL_API_VERSION), e.g. /metricstream/b2b/api/7.0/
+  current_documented_version: '7.0'
+  module_contract_version: V1 (every one of the 27 module basePaths observed, e.g. /MS_GRC_RISK/V1)
+  compatibility_rules:
+  - Client and server MUST be on the same MAJOR version.
+  - Minor versions may differ; a client may request only a LOWER minor than the server's.
+  - Minor versions compare as fixed-width, left-zero-padded numerals, so 1.15 > 1.1.
+  source: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcGRC%20API%20Overview.html
+backward_compatibility:
+  documented: true
+  statement: >-
+    "In most cases, MetricStream will attempt to maintain the API contract and ensure backward
+    compatibility, unless certain critical reasons concerning stability, performance, or security are
+    involved, and minor changes become inevitable."
+  qualified: true
+  source: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+stability_warning:
+  documented: true
+  statement: >-
+    "Owing to continuous releases and patches, APIs are constantly evolving. There will be changes
+    related to structure and usage of these APIs. For the latest updates, contact MetricStream Support
+    team." — and, on coverage: "The key capabilities exposed as services in MetricStream APIs do not
+    cover all the available MetricStream functionalities. However, over the next few releases, other
+    parts of the functionalities will be exposed."
+  source: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+upgrade_guidance:
+  documented: true
+  statement: >-
+    "Standalone REST clients written in customer environment must be verified against newer versions
+    of MetricStream product to ensure compatibility with the request structure and usage patterns of
+    the newer versions."
+  source: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+deprecation_policy:
+  documented: false
+  sunset_header: not documented
+  deprecation_header: not documented
+  rfc8594: false
+  deprecated_operations: 0
+  note: >-
+    No deprecation policy, notice period, or RFC 8594 Sunset/Deprecation header support is published.
+    None of the 204 published operations is marked deprecated. What IS published is the compatibility
+    rule above, which is the closest thing MetricStream offers to a breaking-change contract — but a
+    compatibility intent is not a deprecation policy, so NO `Deprecation` pointer is emitted in
+    apis.yml and none should be added by a later round.
+status_page:
+  public: false
+  probes:
+  - url: https://status.metricstream.com/
+    status: 0
+    note: DNS does not resolve
+  - url: https://trust.metricstream.com/
+    status: 0
+    note: DNS does not resolve
+  note: >-
+    No public status/uptime page was found. The Trust Center describes a Reliability and Performance
+    posture and points at a downloadable performance whitepaper, but there is no live incident feed.
+    Security advisories (Log4Shell, Spring4Shell, Okta/Lapsus$) have historically been posted as links
+    on the Trust Center page rather than on a status service.
+  trust_center: https://www.metricstream.com/about-us/trust-center.htm
+sla:
+  public_document: false
+  claimed: true
+  statement: >-
+    "MetricStream has service level agreements where standard levels of service are continually
+    updated, and levels of service improved."
+  source: https://www.metricstream.com/about-us/trust-center.htm
+  note: The SLA itself is contractual, reachable via https://www.metricstream.com/customer-agreements.
+release_cadence:
+  documented: partially
+  note: >-
+    MetricStream names its platform releases after rivers and mountains (Arno, Brazos, Colorado,
+    Danube, Euphrate) and announces each in the newsroom and blog rather than in a developer changelog.
+    See changelog/metricstream-changelog.yml.

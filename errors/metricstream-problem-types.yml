@@ -1,0 +1,94 @@
+generated: '2026-08-25'
+method: searched
+source: The 34 MetricStream Business API reference pages under https://assets.metricstream.com/pdf/Developer-Portal/
+  plus the module API Overview pages (e.g. https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html),
+  read 2026-08-25
+format: http-status
+rfc9457: false
+note: 'MetricStream does NOT use RFC 9457 application/problem+json. Its Business REST APIs declare a plain
+  HTTP status vocabulary, identically on every one of the 204 published operations: 200, 400, 401, 403,
+  404 and 422. The provider''s own API Overview pages describe the practice as "Usage of Standardized
+  Status and Error codes for easier identification, categorization, and debugging" and "A common validation
+  framework for simpler and descriptive validations", but the PUBLIC documentation does not publish the
+  error BODY shape, an error-code registry, or remediation guidance — only the status line and a one-line
+  description. That is the gap: an agent can tell that a call failed and roughly why, but cannot parse
+  a machine-readable error identifier out of the response, because none is documented.'
+success_status: 200
+success_note: Every operation, including creates and bulk creates, declares 200 (not 201/202) with the
+  entity object as the success response.
+error_count: 5
+problem_types:
+- type: https://www.metricstream.com/api-developer-portal.html#bad-request
+  status: 400
+  title: Bad Request
+  detail: The request could not be understood or was missing required parameters. MetricStream documents
+    a common validation framework across all Business REST endpoints; validation failures surface here.
+  operations_declaring: 204
+  declared_descriptions:
+  - Bad Request.
+  example_operations:
+  - collectionsMsGrcAreaOfCompliance
+  - createMsGrcAreaOfCompliance
+  - creationsMsGrcAreaOfCompliance
+- type: https://www.metricstream.com/api-developer-portal.html#unauthenticated
+  status: 401
+  title: Unauthorized
+  detail: Required authentication information is missing or invalid. The client must present valid MetricStream
+    instance credentials.
+  operations_declaring: 204
+  declared_descriptions:
+  - Required Authentication information is missing or invalid.
+  example_operations:
+  - collectionsMsGrcAreaOfCompliance
+  - createMsGrcAreaOfCompliance
+  - creationsMsGrcAreaOfCompliance
+- type: https://www.metricstream.com/api-developer-portal.html#forbidden
+  status: 403
+  title: Forbidden
+  detail: Insufficient user privileges. MetricStream binds authorization to platform ACTIVITIES on each
+    REST endpoint, so a syntactically valid, authenticated call still fails when the calling user lacks
+    the activity.
+  operations_declaring: 204
+  declared_descriptions:
+  - Forbidden - Insufficient user privileges.
+  example_operations:
+  - collectionsMsGrcAreaOfCompliance
+  - createMsGrcAreaOfCompliance
+  - creationsMsGrcAreaOfCompliance
+- type: https://www.metricstream.com/api-developer-portal.html#not-found
+  status: 404
+  title: Not Found
+  detail: The addressed object was not found in this MetricStream instance. The per-resource description
+    names the entity (e.g. "Risk with the specified ID was not found").
+  operations_declaring: 204
+  declared_descriptions:
+  - Area of compliance with the specified ID was not found.
+  - Asset class with the specified ID was not found.
+  - Asset with the specified ID was not found.
+  - Control with the specified ID was not found.
+  - Engagement with the specified ID was not found.
+  - Evidence with the specified ID was not found.
+  example_operations:
+  - collectionsMsGrcAreaOfCompliance
+  - createMsGrcAreaOfCompliance
+  - creationsMsGrcAreaOfCompliance
+- type: https://www.metricstream.com/api-developer-portal.html#unprocessable-entity
+  status: 422
+  title: Unprocessable Entity
+  detail: The request was well-formed but semantically rejected by the business rules of the GRC module.
+  operations_declaring: 204
+  declared_descriptions:
+  - Unprocessable Entity.
+  example_operations:
+  - collectionsMsGrcAreaOfCompliance
+  - createMsGrcAreaOfCompliance
+  - creationsMsGrcAreaOfCompliance
+envelope:
+  documented: false
+  note: No error envelope/body schema is published on the public developer portal.
+gaps:
+- No error-code registry (numeric or string) is published.
+- No application/problem+json media type; no `type` URI per error.
+- No 429 declared anywhere in 204 operations — rate-limit exhaustion has no documented status.
+- No 5xx declared anywhere in 204 operations.
+- No remediation guidance per error.

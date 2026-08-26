@@ -1,0 +1,81 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  npm registry search (registry.npmjs.org/-/v1/search?text=metricstream), PyPI
+  (pypi.org/pypi/metricstream/json -> 404), Maven Central
+  (search.maven.org/solrsearch), NuGet (azuresearch-usnc.nuget.org, 0 hits), RubyGems,
+  crates.io, the MetricStream GitHub organization (github.com/MetricStream, 10 public
+  repos), and the API developer portal
+  (https://www.metricstream.com/api-developer-portal.html), all probed 2026-08-25.
+summary: >-
+  MetricStream publishes NO first-party client SDK for its Business REST APIs in any
+  public package registry. The published API reference pages render swagger-codegen
+  usage samples for Java, Groovy, Obj-C, JavaScript, C#, PHP, Perl and Python — but
+  those samples import the generic `io.swagger.client` / `swagger_client` /
+  `metricstream_business_api` codegen output, and none of those artifacts is published
+  to Maven Central, PyPI or npm. A developer following the documentation must generate
+  the client themselves, and cannot do so from a published spec because MetricStream
+  does not publish one (see openapi/ absence recorded in conventions/).
+  The packages below ARE first-party MetricStream code (group id `com.metricstream*`,
+  MetricStream GitHub org) but they are internal engineering libraries, NOT API client
+  SDKs — so no `SDKs` pointer is emitted in apis.yml. Emitting one would credit
+  MetricStream with an API client library it does not ship.
+sdk_count: 0
+package_count: 3
+packages:
+- name: com.metricstream.jdbc:sqlbuilder-core
+  registry: maven
+  official: true
+  is_api_sdk: false
+  language: java
+  version: 3.9.0
+  published: '2022-08-18'
+  url: https://central.sonatype.com/artifact/com.metricstream.jdbc/sqlbuilder-core
+  repository: https://github.com/MetricStream/SQLBuilder
+  description: A wrapper around JDBC PreparedStatement for modernized low-level database
+    programming. First-party MetricStream open source; unrelated to the Business REST
+    APIs.
+  note: Latest release 3.9.0 (2022-08-18) read from the Maven Central solrsearch gav
+    core; no release in ~4 years.
+- name: com.metricstream.jdbc:sqlbuilder-mock
+  registry: maven
+  official: true
+  is_api_sdk: false
+  language: java
+  version: 3.9.0
+  published: '2022-08-18'
+  url: https://central.sonatype.com/artifact/com.metricstream.jdbc/sqlbuilder-mock
+  repository: https://github.com/MetricStream/SQLBuilder
+  description: Test-double companion to sqlbuilder-core.
+  note: Latest release 3.9.0 (2022-08-18) read from Maven Central.
+- name: com.metricstream:walkmod-metricstream-plugin
+  registry: maven
+  official: true
+  is_api_sdk: false
+  language: java
+  version: 1.0.1
+  published: '2016-03-13'
+  url: https://central.sonatype.com/artifact/com.metricstream/walkmod-metricstream-plugin
+  description: Walkmod code-transformation plugin. First-party but long dormant.
+  note: Latest release 1.0.1 (2016-03-13) read from Maven Central — ten years without
+    a release.
+registries_checked:
+- registry: npm
+  query: metricstream
+  result: 5 hits, none MetricStream, Inc. (`metricstream` 0.0.1 2014 is an unrelated
+    stream-metrics module; `@checkstack/metricstream-*` is a different vendor)
+- registry: pypi
+  query: metricstream
+  result: 404 — no package
+- registry: maven
+  query: metricstream
+  result: 6 artifacts under com.metricstream* (3 distinct projects, listed above)
+- registry: nuget
+  query: metricstream
+  result: 0 hits
+- registry: rubygems
+  query: metricstream
+  result: no gem
+- registry: crates.io
+  query: metricstream
+  result: no crate

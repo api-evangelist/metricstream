@@ -1,0 +1,126 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  https://www.metricstream.com/about-us/trust-center.htm, the "Security Standards for MetricStream
+  Cloud" document it links (https://assets.metricstream.com/pdf/security-standards-metricstream-cloud-v1.pdf,
+  Ver 1.2, effective 11-Jan-2024), https://www.metricstream.com/platform/apis.htm, and the 34
+  Business API reference pages under https://assets.metricstream.com/pdf/Developer-Portal/ — all
+  read 2026-08-25.
+summary: >-
+  MetricStream's own corporate compliance posture is strong and publicly claimed (ISO 27001, SOC 2
+  Type II, HIPAA attestations, annual third-party audits). Its API-level standards conformance is
+  thin: the platform is marketed as "OpenAPI compliant" but no OpenAPI document is published, and
+  the REST conventions it does publish stop short of the named cross-cutting standards.
+corporate_compliance:
+  certifications:
+  - name: ISO 27001
+    type: certification
+    scope: MetricStream Cloud information security management
+    evidence: >-
+      "With ISO 27001 certification, SOC 2 Type II and HIPAA attestations, ..." — Security Standards
+      for MetricStream Cloud, Ver 1.2, section 1.
+    source: https://assets.metricstream.com/pdf/security-standards-metricstream-cloud-v1.pdf
+  - name: SOC 2 Type II
+    type: attestation
+    scope: MetricStream Cloud
+    evidence: Same statement; report available on request via the Trust Center.
+    source: https://info.metricstream.com/compliance-report-request.html
+  - name: HIPAA
+    type: attestation
+    scope: MetricStream Cloud
+    source: https://assets.metricstream.com/pdf/security-standards-metricstream-cloud-v1.pdf
+  audit_cadence: annual, by certified third-party security assessors
+  report_access: gated — https://info.metricstream.com/compliance-report-request.html (form)
+  privacy_regimes_addressed:
+  - GDPR
+  - CCPA
+  privacy_source: https://www.metricstream.com/about-us/privacy-policy.htm
+  note: >-
+    Do NOT confuse these with the regulatory frameworks MetricStream sells CONTENT for (CCPA, CMMC,
+    COSO, HIPAA, ISO, NIST, PCI DSS, DORA, SOX, UK Corporate Governance Code). Those are product
+    coverage, not MetricStream's own certifications. An automated scrape of the site navigation will
+    read them as certifications; they are not.
+api_conformance:
+- id: openapi
+  conforms: false
+  claimed: true
+  evidence: >-
+    https://www.metricstream.com/platform/apis.htm claims "industry standard OpenAPI compliant REST
+    APIs" and "200+ built-in GRC APIs". The published reference pages ARE swagger-codegen `html2`
+    output (they render SwaggerClient/io.swagger.client usage samples and carry 1,221 inline
+    `#/definitions/` schema names), which shows a Swagger/OpenAPI document exists internally — but no
+    openapi.json / swagger.json is served anywhere. Probed 2026-08-25:
+    www.metricstream.com/openapi.json 404, /swagger.json 404, /api-docs 404, and
+    assets.metricstream.com/pdf/Developer-Portal/**/swagger.json 404.
+  note: The claim is credible; the artifact is simply not published.
+- id: oauth2
+  conforms: partial
+  evidence: >-
+    "OAuth 2.0 integration" is listed as a platform capability in the May 2026 Euphrates-II Update 7
+    release notes. No securityScheme, token endpoint, scope list, or
+    /.well-known/oauth-authorization-server (404 on all hosts) is published for the Business REST APIs.
+  source: https://www.metricstream.com/blog/whats-new-in-metricstream-ai-first-connected-grc.html
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returned 404 on www, assets and info hosts (2026-08-25).
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    Errors are plain HTTP statuses (400/401/403/404/422); no application/problem+json is documented on
+    any of the 204 operations. See errors/metricstream-problem-types.yml.
+- id: pagination
+  conforms: true
+  evidence: >-
+    "Usage of standard query parameters, such as 'limit' and 'offset' for large collections, across all
+    endpoints." — module API Overview pages. Offset pagination, documented as a cross-cutting rule.
+  source: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+- id: idempotency
+  conforms: false
+  evidence: No idempotency key or replay-safety statement appears in any public MetricStream API document.
+- id: json-api
+  conforms: false
+  evidence: Responses are plain JSON entity objects, not a JSON:API document.
+- id: odata
+  conforms: false
+  evidence: No $metadata or OData query surface documented.
+- id: scim
+  conforms: false
+  evidence: No urn:ietf:params:scim:schemas:* URN appears in any published reference page.
+- id: fhir
+  conforms: false
+  evidence: Not a health-data API.
+- id: fapi
+  conforms: false
+  evidence: Not an open-banking API despite serving BFSI customers.
+domain_standard:
+  market: Governance, Risk and Compliance (GRC) / integrated risk management
+  declared_in_contract: false
+  candidates_probed:
+  - standard: OSCAL (NIST Open Security Controls Assessment Language)
+    found: false
+    note: >-
+      OSCAL is the obvious machine-readable control/catalog standard for this market. No OSCAL
+      catalog, profile, component-definition or assessment-results shape appears in the 34 published
+      reference pages, and the GRC Foundation model uses MetricStream's own Control / Requirement /
+      Standard / Regulatory Body entities instead.
+  - standard: OCSF (Open Cybersecurity Schema Framework)
+    found: false
+    note: >-
+      MetricStream has BLOGGED about OCSF and AWS Security Lake
+      (https://www.metricstream.com/blog/aws-security-lake-ocsf-cyber-risk-perspective.html), which is
+      a prose claim, not a contract declaration. No OCSF event class appears in the published API surface.
+  - standard: UCF (Unified Compliance Framework) Common Controls Hub
+    found: partner-listed
+    note: >-
+      MetricStream is listed as a Unified Compliance partner
+      (https://www.unifiedcompliance.com/partner/metricstream/), and its GRC Foundation model carries
+      Standard / Requirement / Framework-Reference entities of the shape UCF mappings use — but the
+      published contract declares no UCF identifier scheme, so this is recorded as a lead, not a conformance.
+  - standard: XBRL / ISO 20022 / X12
+    found: false
+  conforms: false
+  note: >-
+    REWARD-ONLY dimension: MetricStream is NOT penalised here. The finding is that the GRC market's
+    machine-readable control standards (OSCAL above all) are absent from a contract that models
+    Controls, Requirements, Standards and Regulatory Bodies as first-class entities — which is the
+    single clearest standards opportunity on this surface.

@@ -1,0 +1,38 @@
+generated: '2026-08-25'
+method: generated
+source: >-
+  Generated from the operationIds MetricStream publishes in its own Business API reference pages
+  under https://assets.metricstream.com/pdf/Developer-Portal/ (read 2026-08-25), plus
+  conventions/metricstream-conventions.yml, errors/metricstream-problem-types.yml and
+  authentication/metricstream-authentication.yml. MetricStream publishes no AGENTS.md and no
+  provider-authored skills; these are API Evangelist packaged skills.
+grounding: >-
+  Every operationId, method and path referenced in these skills was read verbatim from MetricStream's
+  published reference pages — none is invented. What the skills deliberately do NOT specify is request
+  BODY field names, because MetricStream publishes no machine-readable spec and the section/groupfield
+  layout of each entity is configurable per customer instance.
+skill_count: 4
+skills:
+- name: metricstream-report-issue
+  file: metricstream-report-issue.md
+  api: metricstream-issues
+  operations: 5
+- name: metricstream-load-risk-register
+  file: metricstream-load-risk-register.md
+  api: metricstream-grc-foundation
+  operations: 10
+- name: metricstream-record-loss-event
+  file: metricstream-record-loss-event.md
+  api: metricstream-loss-event-management
+  operations: 7
+- name: metricstream-post-kri-metrics
+  file: metricstream-post-kri-metrics.md
+  api: metricstream-metrics
+  operations: 7
+shared_cautions:
+- No idempotency key on any of the 204 operations — read before every write.
+- No delete, cancel, void, undo or restore operation anywhere on the published surface, and no
+  retention or correction window is documented.
+- No published rate limits and no 429; self-throttle.
+- Errors are bare HTTP statuses (200/400/401/403/404/422); no problem+json, no error-code registry.
+- The base URL is per-customer-instance and the authentication scheme is not publicly documented.

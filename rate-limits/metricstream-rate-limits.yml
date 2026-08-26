@@ -1,0 +1,41 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  All 34 MetricStream Business API reference pages and all 8 module API Overview pages under
+  https://assets.metricstream.com/pdf/Developer-Portal/, plus
+  https://www.metricstream.com/platform/apis.htm — read 2026-08-25.
+summary: >-
+  MetricStream publishes NO rate limits for its Business REST APIs. The module overview pages
+  enumerate the cross-cutting conventions the platform DOES guarantee — pagination, sorting, error
+  handling, validation, authorization — and rate limiting is conspicuously not among them. No
+  RateLimit-* or X-RateLimit-* response header is documented anywhere, no Retry-After is mentioned,
+  and 429 is not declared on any of the 204 published operations (the declared status set is
+  200/400/401/403/404/422 on every single one). An agent therefore has no runtime signal for
+  throttling and no documented backoff contract.
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status: not documented
+retry_after: not documented
+retry_guidance: not documented
+concurrency_limits: not documented
+bulk_limits:
+  documented: false
+  note: >-
+    102 of the 204 operations are bulk (POST /bulk/..., PATCH /bulk/..., POST /collections/...), and
+    no maximum batch size or payload size is published for any of them. Neither is the default or
+    maximum value of the documented `limit` pagination parameter.
+scheduler_note: >-
+  https://www.metricstream.com/platform/apis.htm describes a built-in scheduler for "systematic bulk
+  request processing and periodic data exchange", which implies server-side throttling exists — it is
+  simply not specified to the client.
+evidence:
+- url: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+  status: 200
+  finding: lists pagination, sorts, error handling, validation, authorization — no rate limiting
+- url: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+  status: 200
+  finding: 6 operations, declared statuses 200/400/401/403/404/422 — no 429
+- url: https://www.metricstream.com/platform/apis.htm
+  status: 200
+  finding: no published limits

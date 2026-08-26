@@ -1,0 +1,1464 @@
+generated: '2026-08-25'
+method: derived
+status: candidate
+source: https://www.metricstream.com/api-developer-portal.html and the 34 published API reference pages
+  under https://assets.metricstream.com/pdf/Developer-Portal/ (probed 2026-08-25)
+summary: MetricStream ships NO Model Context Protocol server — hosted or local. Searches of the MetricStream
+  site, its llms.txt, the api-developer-portal, the MetricStream GitHub organization (10 public repos),
+  npm, PyPI and the public MCP registries found none, and no /.well-known/mcp.json is served on any MetricStream
+  host (all 404, see well-known/). The tools[] below are a CANDIDATE list DERIVED one-for-one from the
+  204 operations MetricStream publishes in its own API reference. They are NOT a server that exists. No
+  `MCPServer` pointer is emitted in apis.yml and none should be added by a later round.
+checked: '2026-08-25'
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+probes:
+- url: https://www.metricstream.com/.well-known/mcp.json
+  status: 404
+- url: https://assets.metricstream.com/.well-known/mcp.json
+  status: 404
+- url: https://info.metricstream.com/.well-known/mcp.json
+  status: 404
+- url: https://registry.npmjs.org/-/v1/search?text=metricstream
+  status: 200
+  result: no MetricStream MCP package
+tool_count: 204
+note: 'The candidate surface is unusually regular: 34 GRC entities x 6 operations each (single get, single
+  create, single patch, plus bulk collections-read, bulk create and bulk patch). Input schemas are NOT
+  recorded here because MetricStream publishes no machine-readable spec — the reference pages are swagger-codegen
+  HTML with 1,221 inline definition names but no downloadable swagger.json. Any real server would need
+  those schemas from the provider.'
+tools:
+- name: collectionsMsGrcAreaOfCompliance
+  description: Find area of compliance collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/areaofcompliance
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAreaOfCompliance.html
+- name: createMsGrcAreaOfCompliance
+  description: Add a new area of compliance to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/areaofcompliance
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAreaOfCompliance.html
+- name: creationsMsGrcAreaOfCompliance
+  description: Add multiple area of compliance to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/areaofcompliance
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAreaOfCompliance.html
+- name: getMsGrcAreaOfCompliance
+  description: Find area of compliance by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/areaofcompliance/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAreaOfCompliance.html
+- name: patchMsGrcAreaOfCompliance
+  description: Update an existing area of compliance
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/areaofcompliance
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAreaOfCompliance.html
+- name: updatesMsGrcAreaOfCompliance
+  description: Add multiple area of compliance to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/areaofcompliance
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAreaOfCompliance.html
+- name: collectionsMsGrcAsset
+  description: Find asset collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/asset
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- name: createMsGrcAsset
+  description: Add a new asset to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/asset
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- name: creationsMsGrcAsset
+  description: Add multiple asset to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/asset
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- name: getMsGrcAsset
+  description: Find asset by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/asset/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- name: patchMsGrcAsset
+  description: Update an existing asset
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/asset
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- name: updatesMsGrcAsset
+  description: Add multiple asset to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/asset
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- name: collectionsMsGrcAssetClass
+  description: Find asset class collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/assetclass
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAssetClass.html
+- name: createMsGrcAssetClass
+  description: Add a new asset class to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/assetclass
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAssetClass.html
+- name: creationsMsGrcAssetClass
+  description: Add multiple asset class to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/assetclass
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAssetClass.html
+- name: getMsGrcAssetClass
+  description: Find asset class by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/assetclass/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAssetClass.html
+- name: patchMsGrcAssetClass
+  description: Update an existing asset class
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/assetclass
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAssetClass.html
+- name: updatesMsGrcAssetClass
+  description: Add multiple asset class to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/assetclass
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAssetClass.html
+- name: collectionsMsGrcControl
+  description: Find control collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/control
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- name: createMsGrcControl
+  description: Add a new control to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/control
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- name: creationsMsGrcControl
+  description: Add multiple control to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/control
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- name: getMsGrcControl
+  description: Find control by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/control/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- name: patchMsGrcControl
+  description: Update an existing control
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/control
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- name: updatesMsGrcControl
+  description: Add multiple control to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/control
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- name: collectionsMsGrcEvidence
+  description: Find evidence collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/evidence
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcEvidence.html
+- name: createMsGrcEvidence
+  description: Add a new evidence to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/evidence
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcEvidence.html
+- name: creationsMsGrcEvidence
+  description: Add multiple evidence to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/evidence
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcEvidence.html
+- name: getMsGrcEvidence
+  description: Find evidence by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/evidence/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcEvidence.html
+- name: patchMsGrcEvidence
+  description: Update an existing evidence
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/evidence
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcEvidence.html
+- name: updatesMsGrcEvidence
+  description: Add multiple evidence to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/evidence
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcEvidence.html
+- name: collectionsMsGrcException
+  description: Find exception collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/exception
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+- name: createMsGrcException
+  description: Add a new exception to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/exception
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+- name: creationsMsGrcException
+  description: Add multiple exception to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/exception
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+- name: getMsGrcException
+  description: Find exception by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/exception/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+- name: patchMsGrcException
+  description: Update an existing exception
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/exception
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+- name: updatesMsGrcException
+  description: Add multiple exception to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/exception
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+- name: collectionsMsGrcFinancialAccounts
+  description: Find financial account collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/financialaccount
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFinancialAccounts.html
+- name: createMsGrcFinancialAccounts
+  description: Add a new financial account to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/financialaccount
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFinancialAccounts.html
+- name: creationsMsGrcFinancialAccounts
+  description: Add multiple financial account to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/financialaccount
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFinancialAccounts.html
+- name: getMsGrcFinancialAccounts
+  description: Find financial account by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/financialaccount/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFinancialAccounts.html
+- name: patchMsGrcFinancialAccounts
+  description: Update an existing financial account
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/financialaccount
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFinancialAccounts.html
+- name: updatesMsGrcFinancialAccounts
+  description: Add multiple financial account to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/financialaccount
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFinancialAccounts.html
+- name: collectionsMsGrcFunction
+  description: Find function collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/function
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFunction.html
+- name: createMsGrcFunction
+  description: Add a new function to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/function
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFunction.html
+- name: creationsMsGrcFunction
+  description: Add multiple function to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/function
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFunction.html
+- name: getMsGrcFunction
+  description: Find function by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/function/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFunction.html
+- name: patchMsGrcFunction
+  description: Update an existing function
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/function
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFunction.html
+- name: updatesMsGrcFunction
+  description: Add multiple function to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/function
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFunction.html
+- name: collectionsMsGrcModelReference
+  description: Find framework reference collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/frameworkreference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcModelReference.html
+- name: createMsGrcModelReference
+  description: Add a new framework reference to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/frameworkreference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcModelReference.html
+- name: creationsMsGrcModelReference
+  description: Add multiple framework reference to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/frameworkreference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcModelReference.html
+- name: getMsGrcModelReference
+  description: Find framework reference by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/frameworkreference/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcModelReference.html
+- name: patchMsGrcModelReference
+  description: Update an existing framework reference
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/frameworkreference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcModelReference.html
+- name: updatesMsGrcModelReference
+  description: Add multiple framework reference to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/frameworkreference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcModelReference.html
+- name: collectionsMsGrcObjectives
+  description: Find objective collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/objective
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcObjectives.html
+- name: createMsGrcObjectives
+  description: Add a new objective to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/objective
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcObjectives.html
+- name: creationsMsGrcObjectives
+  description: Add multiple objective to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/objective
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcObjectives.html
+- name: getMsGrcObjectives
+  description: Find objective by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/objective/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcObjectives.html
+- name: patchMsGrcObjectives
+  description: Update an existing objective
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/objective
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcObjectives.html
+- name: updatesMsGrcObjectives
+  description: Add multiple objective to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/objective
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcObjectives.html
+- name: collectionsMsGrcProcess
+  description: Find process collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/process
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProcess.html
+- name: createMsGrcProcess
+  description: Add a new process to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/process
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProcess.html
+- name: creationsMsGrcProcess
+  description: Add multiple process to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/process
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProcess.html
+- name: getMsGrcProcess
+  description: Find process by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/process/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProcess.html
+- name: patchMsGrcProcess
+  description: Update an existing process
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/process
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProcess.html
+- name: updatesMsGrcProcess
+  description: Add multiple process to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/process
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProcess.html
+- name: collectionsMsGrcProduct
+  description: Find product collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/product
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProduct.html
+- name: createMsGrcProduct
+  description: Add a new product to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/product
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProduct.html
+- name: creationsMsGrcProduct
+  description: Add multiple product to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/product
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProduct.html
+- name: getMsGrcProduct
+  description: Find product by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/product/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProduct.html
+- name: patchMsGrcProduct
+  description: Update an existing product
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/product
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProduct.html
+- name: updatesMsGrcProduct
+  description: Add multiple product to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/product
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProduct.html
+- name: collectionsMsGrcQuestionProcedure
+  description: Find question and procedure collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/questionandprocedure
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcQuestionProcedure.html
+- name: createMsGrcQuestionProcedure
+  description: Add a new question and procedure to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/questionandprocedure
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcQuestionProcedure.html
+- name: creationsMsGrcQuestionProcedure
+  description: Add multiple question and procedure to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/questionandprocedure
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcQuestionProcedure.html
+- name: getMsGrcQuestionProcedure
+  description: Find question and procedure by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/questionandprocedure/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcQuestionProcedure.html
+- name: patchMsGrcQuestionProcedure
+  description: Update an existing question and procedure
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/questionandprocedure
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcQuestionProcedure.html
+- name: updatesMsGrcQuestionProcedure
+  description: Add multiple question and procedure to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/questionandprocedure
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcQuestionProcedure.html
+- name: collectionsMsGrcReference
+  description: Find reference collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/reference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcReference.html
+- name: createMsGrcReference
+  description: Add a new reference to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/reference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcReference.html
+- name: creationsMsGrcReference
+  description: Add multiple reference to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/reference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcReference.html
+- name: getMsGrcReference
+  description: Find reference by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/reference/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcReference.html
+- name: patchMsGrcReference
+  description: Update an existing reference
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/reference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcReference.html
+- name: updatesMsGrcReference
+  description: Add multiple reference to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/reference
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcReference.html
+- name: collectionsMsGrcRegulatoryBody
+  description: Find regulatory body collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/regulatorybody
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRegulatoryBody.html
+- name: createMsGrcRegulatoryBody
+  description: Add a new regulatory body to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/regulatorybody
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRegulatoryBody.html
+- name: creationsMsGrcRegulatoryBody
+  description: Add multiple regulatory body to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/regulatorybody
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRegulatoryBody.html
+- name: getMsGrcRegulatoryBody
+  description: Find regulatory body by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/regulatorybody/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRegulatoryBody.html
+- name: patchMsGrcRegulatoryBody
+  description: Update an existing regulatory body
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/regulatorybody
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRegulatoryBody.html
+- name: updatesMsGrcRegulatoryBody
+  description: Add multiple regulatory body to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/regulatorybody
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRegulatoryBody.html
+- name: collectionsMsGrcRequirement
+  description: Find requirement collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/requirement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- name: createMsGrcRequirement
+  description: Add a new requirement to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/requirement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- name: creationsMsGrcRequirement
+  description: Add multiple requirement to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/requirement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- name: getMsGrcRequirement
+  description: Find requirement by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/requirement/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- name: patchMsGrcRequirement
+  description: Update an existing requirement
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/requirement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- name: updatesMsGrcRequirement
+  description: Add multiple requirement to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/requirement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- name: collectionsMsGrcRisk
+  description: Find risk collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/risk
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- name: createMsGrcRisk
+  description: Add a new risk to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/risk
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- name: creationsMsGrcRisk
+  description: Add multiple risk to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/risk
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- name: getMsGrcRisk
+  description: Find risk by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/risk/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- name: patchMsGrcRisk
+  description: Update an existing risk
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/risk
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- name: updatesMsGrcRisk
+  description: Add multiple risk to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/risk
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- name: collectionsMsGrcStandard
+  description: Find standard collections by IDs
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /collections/grc/standard
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcStandard.html
+- name: createMsGrcStandard
+  description: Add a new standard to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /grc/standard
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcStandard.html
+- name: creationsMsGrcStandard
+  description: Add multiple standard to the store
+  category: grc-foundation
+  rest:
+    method: POST
+    path: /bulk/grc/standard
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcStandard.html
+- name: getMsGrcStandard
+  description: Find standard by ID
+  category: grc-foundation
+  rest:
+    method: GET
+    path: /grc/standard/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcStandard.html
+- name: patchMsGrcStandard
+  description: Update an existing standard
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /grc/standard
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcStandard.html
+- name: updatesMsGrcStandard
+  description: Add multiple standard to the store
+  category: grc-foundation
+  rest:
+    method: PATCH
+    path: /bulk/grc/standard
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcStandard.html
+- name: collectionsMsIsmIssue
+  description: Find issue collections by IDs
+  category: issues
+  rest:
+    method: POST
+    path: /collections/ism/issue
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
+- name: createMsIsmIssue
+  description: Add a new issue to the store
+  category: issues
+  rest:
+    method: POST
+    path: /ism/issue
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
+- name: creationsMsIsmIssue
+  description: Add multiple issue to the store
+  category: issues
+  rest:
+    method: POST
+    path: /bulk/ism/issue
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
+- name: getMsIsmIssue
+  description: Find issue by ID
+  category: issues
+  rest:
+    method: GET
+    path: /ism/issue/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
+- name: patchMsIsmIssue
+  description: Update an existing issue
+  category: issues
+  rest:
+    method: PATCH
+    path: /ism/issue
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
+- name: updatesMsIsmIssue
+  description: Add multiple issue to the store
+  category: issues
+  rest:
+    method: PATCH
+    path: /bulk/ism/issue
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
+- name: collectionsMsLsmDefaultFields
+  description: Find ms_lsm_default_fields collections by IDs
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /collections/lsm/defaultcurrencyforlossevents
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmDefaultFields.html
+- name: createMsLsmDefaultFields
+  description: Add a new ms_lsm_default_fields to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /lsm/defaultcurrencyforlossevents
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmDefaultFields.html
+- name: creationsMsLsmDefaultFields
+  description: Add multiple ms_lsm_default_fields to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /bulk/lsm/defaultcurrencyforlossevents
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmDefaultFields.html
+- name: getMsLsmDefaultFields
+  description: Find ms_lsm_default_fields by ID
+  category: loss-event-management
+  rest:
+    method: GET
+    path: /lsm/defaultcurrencyforlossevents/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmDefaultFields.html
+- name: patchMsLsmDefaultFields
+  description: Update an existing ms_lsm_default_fields
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /lsm/defaultcurrencyforlossevents
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmDefaultFields.html
+- name: updatesMsLsmDefaultFields
+  description: Add multiple ms_lsm_default_fields to the store
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /bulk/lsm/defaultcurrencyforlossevents
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmDefaultFields.html
+- name: collectionsMsLsmExternalLossEvent
+  description: Find ms_lsm_external_loss_event collections by IDs
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /collections/lsm/externallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmExternalLossEvent.html
+- name: createMsLsmExternalLossEvent
+  description: Add a new ms_lsm_external_loss_event to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /lsm/externallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmExternalLossEvent.html
+- name: creationsMsLsmExternalLossEvent
+  description: Add multiple ms_lsm_external_loss_event to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /bulk/lsm/externallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmExternalLossEvent.html
+- name: getMsLsmExternalLossEvent
+  description: Find ms_lsm_external_loss_event by ID
+  category: loss-event-management
+  rest:
+    method: GET
+    path: /lsm/externallossevent/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmExternalLossEvent.html
+- name: patchMsLsmExternalLossEvent
+  description: Update an existing ms_lsm_external_loss_event
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /lsm/externallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmExternalLossEvent.html
+- name: updatesMsLsmExternalLossEvent
+  description: Add multiple ms_lsm_external_loss_event to the store
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /bulk/lsm/externallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmExternalLossEvent.html
+- name: collectionsMsLsmImpacts
+  description: Find ms_lsm_impacts collections by IDs
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /collections/lsm/impact
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- name: createMsLsmImpacts
+  description: Add a new ms_lsm_impacts to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /lsm/impact
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- name: creationsMsLsmImpacts
+  description: Add multiple ms_lsm_impacts to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /bulk/lsm/impact
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- name: getMsLsmImpacts
+  description: Find ms_lsm_impacts by ID
+  category: loss-event-management
+  rest:
+    method: GET
+    path: /lsm/impact/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- name: patchMsLsmImpacts
+  description: Update an existing ms_lsm_impacts
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /lsm/impact
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- name: updatesMsLsmImpacts
+  description: Add multiple ms_lsm_impacts to the store
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /bulk/lsm/impact
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- name: collectionsMsLsmInternalLossEvent
+  description: Find ms_lsm_internal_loss_event collections by IDs
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /collections/lsm/internallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmInternalLossEvent.html
+- name: createMsLsmInternalLossEvent
+  description: Add a new ms_lsm_internal_loss_event to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /lsm/internallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmInternalLossEvent.html
+- name: creationsMsLsmInternalLossEvent
+  description: Add multiple ms_lsm_internal_loss_event to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /bulk/lsm/internallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmInternalLossEvent.html
+- name: getMsLsmInternalLossEvent
+  description: Find ms_lsm_internal_loss_event by ID
+  category: loss-event-management
+  rest:
+    method: GET
+    path: /lsm/internallossevent/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmInternalLossEvent.html
+- name: patchMsLsmInternalLossEvent
+  description: Update an existing ms_lsm_internal_loss_event
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /lsm/internallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmInternalLossEvent.html
+- name: updatesMsLsmInternalLossEvent
+  description: Add multiple ms_lsm_internal_loss_event to the store
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /bulk/lsm/internallossevent
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmInternalLossEvent.html
+- name: collectionsMsLsmLossRule
+  description: Find ms_lsm_loss_rule collections by IDs
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /collections/lsm/approvalrule
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmLossRule.html
+- name: createMsLsmLossRule
+  description: Add a new ms_lsm_loss_rule to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /lsm/approvalrule
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmLossRule.html
+- name: creationsMsLsmLossRule
+  description: Add multiple ms_lsm_loss_rule to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /bulk/lsm/approvalrule
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmLossRule.html
+- name: getMsLsmLossRule
+  description: Find ms_lsm_loss_rule by ID
+  category: loss-event-management
+  rest:
+    method: GET
+    path: /lsm/approvalrule/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmLossRule.html
+- name: patchMsLsmLossRule
+  description: Update an existing ms_lsm_loss_rule
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /lsm/approvalrule
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmLossRule.html
+- name: updatesMsLsmLossRule
+  description: Add multiple ms_lsm_loss_rule to the store
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /bulk/lsm/approvalrule
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmLossRule.html
+- name: collectionsMsLsmRskRegMap
+  description: Find ms_lsm_rsk_reg_map collections by IDs
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /collections/lsm/riskeventtypemapping
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- name: createMsLsmRskRegMap
+  description: Add a new ms_lsm_rsk_reg_map to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /lsm/riskeventtypemapping
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- name: creationsMsLsmRskRegMap
+  description: Add multiple ms_lsm_rsk_reg_map to the store
+  category: loss-event-management
+  rest:
+    method: POST
+    path: /bulk/lsm/riskeventtypemapping
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- name: getMsLsmRskRegMap
+  description: Find ms_lsm_rsk_reg_map by ID
+  category: loss-event-management
+  rest:
+    method: GET
+    path: /lsm/riskeventtypemapping/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- name: patchMsLsmRskRegMap
+  description: Update an existing ms_lsm_rsk_reg_map
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /lsm/riskeventtypemapping
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- name: updatesMsLsmRskRegMap
+  description: Add multiple ms_lsm_rsk_reg_map to the store
+  category: loss-event-management
+  rest:
+    method: PATCH
+    path: /bulk/lsm/riskeventtypemapping
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- name: collectionsMsMetDataEntry
+  description: Find metric data collections by IDs
+  category: metrics
+  rest:
+    method: POST
+    path: /collections/met/metricdata
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html
+- name: createMsMetDataEntry
+  description: Add a new metric data to the store
+  category: metrics
+  rest:
+    method: POST
+    path: /met/metricdata
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html
+- name: creationsMsMetDataEntry
+  description: Add multiple metric data to the store
+  category: metrics
+  rest:
+    method: POST
+    path: /bulk/met/metricdata
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html
+- name: getMsMetDataEntry
+  description: Find metric data by ID
+  category: metrics
+  rest:
+    method: GET
+    path: /met/metricdata/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html
+- name: patchMsMetDataEntry
+  description: Update an existing metric data
+  category: metrics
+  rest:
+    method: PATCH
+    path: /met/metricdata
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html
+- name: updatesMsMetDataEntry
+  description: Add multiple metric data to the store
+  category: metrics
+  rest:
+    method: PATCH
+    path: /bulk/met/metricdata
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html
+- name: collectionsMsMetDefinition
+  description: Find metric collections by IDs
+  category: metrics
+  rest:
+    method: POST
+    path: /collections/met/metric
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDefinition.html
+- name: createMsMetDefinition
+  description: Add a new metric to the store
+  category: metrics
+  rest:
+    method: POST
+    path: /met/metric
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDefinition.html
+- name: creationsMsMetDefinition
+  description: Add multiple metric to the store
+  category: metrics
+  rest:
+    method: POST
+    path: /bulk/met/metric
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDefinition.html
+- name: getMsMetDefinition
+  description: Find metric by ID
+  category: metrics
+  rest:
+    method: GET
+    path: /met/metric/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDefinition.html
+- name: patchMsMetDefinition
+  description: Update an existing metric
+  category: metrics
+  rest:
+    method: PATCH
+    path: /met/metric
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDefinition.html
+- name: updatesMsMetDefinition
+  description: Add multiple metric to the store
+  category: metrics
+  rest:
+    method: PATCH
+    path: /bulk/met/metric
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDefinition.html
+- name: collectionsMsCmpManageTestPlan
+  description: Find test/self-assessment plan collections by IDs
+  category: self-assessment-testing
+  rest:
+    method: POST
+    path: /collections/cmp/testselfassessmentplan
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpManageTestPlan.html
+- name: createMsCmpManageTestPlan
+  description: Add a new test/self-assessment plan to the store
+  category: self-assessment-testing
+  rest:
+    method: POST
+    path: /cmp/testselfassessmentplan
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpManageTestPlan.html
+- name: creationsMsCmpManageTestPlan
+  description: Add multiple test/self-assessment plan to the store
+  category: self-assessment-testing
+  rest:
+    method: POST
+    path: /bulk/cmp/testselfassessmentplan
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpManageTestPlan.html
+- name: getMsCmpManageTestPlan
+  description: Find test/self-assessment plan by ID
+  category: self-assessment-testing
+  rest:
+    method: GET
+    path: /cmp/testselfassessmentplan/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpManageTestPlan.html
+- name: patchMsCmpManageTestPlan
+  description: Update an existing test/self-assessment plan
+  category: self-assessment-testing
+  rest:
+    method: PATCH
+    path: /cmp/testselfassessmentplan
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpManageTestPlan.html
+- name: updatesMsCmpManageTestPlan
+  description: Add multiple test/self-assessment plan to the store
+  category: self-assessment-testing
+  rest:
+    method: PATCH
+    path: /bulk/cmp/testselfassessmentplan
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpManageTestPlan.html
+- name: collectionsMsQsmCreateQuestnr
+  description: Find ms_qsm_create_questnr collections by IDs
+  category: surveys
+  rest:
+    method: POST
+    path: /collections/qsm/questionnaire
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmCreateQuestnr.html
+- name: createMsQsmCreateQuestnr
+  description: Add a new ms_qsm_create_questnr to the store
+  category: surveys
+  rest:
+    method: POST
+    path: /qsm/questionnaire
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmCreateQuestnr.html
+- name: creationsMsQsmCreateQuestnr
+  description: Add multiple ms_qsm_create_questnr to the store
+  category: surveys
+  rest:
+    method: POST
+    path: /bulk/qsm/questionnaire
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmCreateQuestnr.html
+- name: getMsQsmCreateQuestnr
+  description: Find ms_qsm_create_questnr by ID
+  category: surveys
+  rest:
+    method: GET
+    path: /qsm/questionnaire/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmCreateQuestnr.html
+- name: patchMsQsmCreateQuestnr
+  description: Update an existing ms_qsm_create_questnr
+  category: surveys
+  rest:
+    method: PATCH
+    path: /qsm/questionnaire
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmCreateQuestnr.html
+- name: updatesMsQsmCreateQuestnr
+  description: Add multiple ms_qsm_create_questnr to the store
+  category: surveys
+  rest:
+    method: PATCH
+    path: /bulk/qsm/questionnaire
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmCreateQuestnr.html
+- name: collectionsMsQsmInitiateQuestnr
+  description: Find ms_qsm_initiate_questnr collections by IDs
+  category: surveys
+  rest:
+    method: POST
+    path: /collections/qsm/surveyscorecardcertification
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- name: createMsQsmInitiateQuestnr
+  description: Add a new ms_qsm_initiate_questnr to the store
+  category: surveys
+  rest:
+    method: POST
+    path: /qsm/surveyscorecardcertification
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- name: creationsMsQsmInitiateQuestnr
+  description: Add multiple ms_qsm_initiate_questnr to the store
+  category: surveys
+  rest:
+    method: POST
+    path: /bulk/qsm/surveyscorecardcertification
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- name: getMsQsmInitiateQuestnr
+  description: Find ms_qsm_initiate_questnr by ID
+  category: surveys
+  rest:
+    method: GET
+    path: /qsm/surveyscorecardcertification/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- name: patchMsQsmInitiateQuestnr
+  description: Update an existing ms_qsm_initiate_questnr
+  category: surveys
+  rest:
+    method: PATCH
+    path: /qsm/surveyscorecardcertification
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- name: updatesMsQsmInitiateQuestnr
+  description: Add multiple ms_qsm_initiate_questnr to the store
+  category: surveys
+  rest:
+    method: PATCH
+    path: /bulk/qsm/surveyscorecardcertification
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- name: collectionsMsRenEngagement
+  description: Find engagement collections by IDs
+  category: regulatory-engagements
+  rest:
+    method: POST
+    path: /collections/ren/engagement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenEngagement.html
+- name: createMsRenEngagement
+  description: Add a new engagement to the store
+  category: regulatory-engagements
+  rest:
+    method: POST
+    path: /ren/engagement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenEngagement.html
+- name: creationsMsRenEngagement
+  description: Add multiple engagement to the store
+  category: regulatory-engagements
+  rest:
+    method: POST
+    path: /bulk/ren/engagement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenEngagement.html
+- name: getMsRenEngagement
+  description: Find engagement by ID
+  category: regulatory-engagements
+  rest:
+    method: GET
+    path: /ren/engagement/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenEngagement.html
+- name: patchMsRenEngagement
+  description: Update an existing engagement
+  category: regulatory-engagements
+  rest:
+    method: PATCH
+    path: /ren/engagement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenEngagement.html
+- name: updatesMsRenEngagement
+  description: Add multiple engagement to the store
+  category: regulatory-engagements
+  rest:
+    method: PATCH
+    path: /bulk/ren/engagement
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenEngagement.html
+- name: collectionsMsRenTask
+  description: Find task collections by IDs
+  category: regulatory-engagements
+  rest:
+    method: POST
+    path: /collections/ren/task
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- name: createMsRenTask
+  description: Add a new task to the store
+  category: regulatory-engagements
+  rest:
+    method: POST
+    path: /ren/task
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- name: creationsMsRenTask
+  description: Add multiple task to the store
+  category: regulatory-engagements
+  rest:
+    method: POST
+    path: /bulk/ren/task
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- name: getMsRenTask
+  description: Find task by ID
+  category: regulatory-engagements
+  rest:
+    method: GET
+    path: /ren/task/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- name: patchMsRenTask
+  description: Update an existing task
+  category: regulatory-engagements
+  rest:
+    method: PATCH
+    path: /ren/task
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- name: updatesMsRenTask
+  description: Add multiple task to the store
+  category: regulatory-engagements
+  rest:
+    method: PATCH
+    path: /bulk/ren/task
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- name: collectionsMsRskAssessmentTask
+  description: Find risk assessment task collections by IDs
+  category: risk-assessments
+  rest:
+    method: POST
+    path: /collections/rsk/riskassessmenttask
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- name: createMsRskAssessmentTask
+  description: Add a new risk assessment task to the store
+  category: risk-assessments
+  rest:
+    method: POST
+    path: /rsk/riskassessmenttask
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- name: creationsMsRskAssessmentTask
+  description: Add multiple risk assessment task to the store
+  category: risk-assessments
+  rest:
+    method: POST
+    path: /bulk/rsk/riskassessmenttask
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- name: getMsRskAssessmentTask
+  description: Find risk assessment task by ID
+  category: risk-assessments
+  rest:
+    method: GET
+    path: /rsk/riskassessmenttask/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- name: patchMsRskAssessmentTask
+  description: Update an existing risk assessment task
+  category: risk-assessments
+  rest:
+    method: PATCH
+    path: /rsk/riskassessmenttask
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- name: updatesMsRskAssessmentTask
+  description: Add multiple risk assessment task to the store
+  category: risk-assessments
+  rest:
+    method: PATCH
+    path: /bulk/rsk/riskassessmenttask
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- name: collectionsMsRskDefineWeights
+  description: Find risk aggregation weight collections by IDs
+  category: risk-assessments
+  rest:
+    method: POST
+    path: /collections/rsk/setupriskaggregationweights
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html
+- name: createMsRskDefineWeights
+  description: Add a new risk aggregation weight to the store
+  category: risk-assessments
+  rest:
+    method: POST
+    path: /rsk/setupriskaggregationweights
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html
+- name: creationsMsRskDefineWeights
+  description: Add multiple risk aggregation weight to the store
+  category: risk-assessments
+  rest:
+    method: POST
+    path: /bulk/rsk/setupriskaggregationweights
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html
+- name: getMsRskDefineWeights
+  description: Find risk aggregation weight by ID
+  category: risk-assessments
+  rest:
+    method: GET
+    path: /rsk/setupriskaggregationweights/{id}
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html
+- name: patchMsRskDefineWeights
+  description: Update an existing risk aggregation weight
+  category: risk-assessments
+  rest:
+    method: PATCH
+    path: /rsk/setupriskaggregationweights
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html
+- name: updatesMsRskDefineWeights
+  description: Add multiple risk aggregation weight to the store
+  category: risk-assessments
+  rest:
+    method: PATCH
+    path: /bulk/rsk/setupriskaggregationweights
+  source_doc: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html

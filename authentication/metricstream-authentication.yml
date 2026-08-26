@@ -1,0 +1,59 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  MetricStream Business API module overview pages
+  (https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html and siblings),
+  the 34 reference pages under https://assets.metricstream.com/pdf/Developer-Portal/, the platform
+  APIs page https://www.metricstream.com/platform/apis.htm, and /.well-known/ probes on every
+  MetricStream host — all read 2026-08-25.
+summary: >-
+  MetricStream's public API documentation confirms that its Business REST APIs are AUTHENTICATED and
+  that authorization is activity-based, but it does not publish WHICH authentication scheme to use.
+  No securityScheme is declared (there is no machine-readable spec), no Authorization header is shown
+  in any of the 204 rendered curl samples, no token endpoint is named, and no OpenID/OAuth discovery
+  document is served on any host. The scheme is obtainable only from MetricStream Support or the
+  gated partner portal.
+scheme_count: 0
+schemes: []
+documented_facts:
+- fact: Authentication is required.
+  evidence: >-
+    Every one of the 204 published operations declares "401 - Required Authentication information is
+    missing or invalid."
+  source: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- fact: The APIs let customers "make authenticated calls against core features" from other applications.
+  source: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+- fact: Authorization is built in for the REST endpoints "using activities, to prevent unauthorized access".
+  evidence: 403 Forbidden - Insufficient user privileges is declared on all 204 operations.
+  source: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+- fact: Alternate authentication schemes exist but are not published.
+  evidence: >-
+    "For more advanced usages of Integration, such as using alternate Authentication Schemes OR other
+    functional needs, contact MetricStream Support team."
+  source: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+- fact: Transport is TLS and clients are told to validate the server certificate.
+  source: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcGRC%20API%20Overview.html
+- fact: MetricStream markets "appropriate security and authentication wrappers" on its OpenAPI-compliant REST APIs.
+  source: https://www.metricstream.com/platform/apis.htm
+negative_probes:
+- url: https://www.metricstream.com/.well-known/openid-configuration
+  status: 404
+- url: https://www.metricstream.com/.well-known/oauth-authorization-server
+  status: 404
+- url: https://www.metricstream.com/.well-known/oauth-protected-resource
+  status: 404
+- url: https://assets.metricstream.com/.well-known/openid-configuration
+  status: 404
+- url: https://info.metricstream.com/.well-known/openid-configuration
+  status: 404
+oauth:
+  declared: false
+  note: >-
+    No OAuth 2.0 or OpenID Connect surface is documented or discoverable, so no scopes/ artifact is
+    written — this is a key/credential API with no published scope vocabulary, and forcing an empty
+    scopes file would misrepresent it.
+gap: >-
+  This is the highest-value, lowest-cost fix on MetricStream's public API surface. A single page
+  naming the scheme (header name, credential type, how to obtain it, token lifetime) would let a
+  developer or an agent get from the published 204-operation reference to a first successful call.
+  Today the reference is complete enough to plan an integration and stops one step short of making one.

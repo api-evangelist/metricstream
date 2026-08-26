@@ -1,0 +1,617 @@
+generated: '2026-08-25'
+method: derived
+source: Derived from the 34 published MetricStream Business API reference pages under https://assets.metricstream.com/pdf/Developer-Portal/
+  (read 2026-08-25). MetricStream publishes no machine-readable spec, so entity names, resource paths
+  and operation counts are read from the reference pages; relationships are read from the inline definition
+  names those pages carry.
+summary: '34 addressable GRC entities across 8 API families, each exposing the SAME six-operation surface
+  (get, create, patch on the singular resource; collections, creations, updates on the bulk resource)
+  for 204 documented operations. Every entity is identified by an `ObjectID` passed as the path parameter
+  `id` (declared type String). The reference pages carry 1,221 distinct `#/definitions/` schema names
+  — an average of ~36 sub-schemas per entity, because MetricStream models each entity as a header object
+  plus named form SECTIONS (Details, OwnershipAndSecurity, AdditionalDetails, Comments) and GROUPFIELDS
+  (Dates, Approvers, Hierarchy, Validity, Classification, Attachments, Relationships). That section/groupfield
+  shape is itself the platform''s data model: an App Studio form maps 1:1 onto the JSON body.'
+entity_count: 34
+operation_count: 204
+schema_definition_count: 1221
+identifier_scheme:
+  field: ObjectID
+  path_param: id
+  type: String
+  note: Uniform across all 34 entities; no per-entity id prefix is documented.
+domains:
+- prefix: grc
+  description: GRC Foundation — the shared object model every other module references
+- prefix: ism
+  description: Issue management
+- prefix: lsm
+  description: Loss event management (operational risk)
+- prefix: met
+  description: Metrics (KRI/KPI)
+- prefix: qsm
+  description: Surveys / questionnaires
+- prefix: ren
+  description: Regulatory engagements
+- prefix: rsk
+  description: Risk assessments
+- prefix: cmp
+  description: Compliance testing / self assessment
+common_sub_object_patterns:
+- Section*Details
+- Section*OwnershipAndSecurity
+- Section*AdditionalDetails
+- Section*Comments
+- Groupfield*Dates
+- Groupfield*Approvers
+- Groupfield*Hierarchy
+- Msai*Validity
+- Msai*Classification
+- Msai*Attachments
+- Msai*Relationships
+- OrbRelationships
+entities:
+- name: areaofcompliance
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/areaofcompliance
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAreaOfCompliance.html
+- name: asset
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/asset
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- name: assetclass
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/assetclass
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAssetClass.html
+- name: control
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/control
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- name: evidence
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/evidence
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcEvidence.html
+- name: exception
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/exception
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+- name: financialaccount
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/financialaccount
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFinancialAccounts.html
+- name: function
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/function
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcFunction.html
+- name: frameworkreference
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/frameworkreference
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcModelReference.html
+- name: objective
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/objective
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcObjectives.html
+- name: process
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/process
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProcess.html
+- name: product
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/product
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcProduct.html
+- name: questionandprocedure
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/questionandprocedure
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcQuestionProcedure.html
+- name: reference
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/reference
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcReference.html
+- name: regulatorybody
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/regulatorybody
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRegulatoryBody.html
+- name: requirement
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/requirement
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- name: risk
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/risk
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- name: standard
+  domain: grc
+  family: grc-foundation
+  resource_path: /grc/standard
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcStandard.html
+- name: issue
+  domain: ism
+  family: issues
+  resource_path: /ism/issue
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
+- name: defaultcurrencyforlossevents
+  domain: lsm
+  family: loss-event-management
+  resource_path: /lsm/defaultcurrencyforlossevents
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmDefaultFields.html
+- name: externallossevent
+  domain: lsm
+  family: loss-event-management
+  resource_path: /lsm/externallossevent
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmExternalLossEvent.html
+- name: impact
+  domain: lsm
+  family: loss-event-management
+  resource_path: /lsm/impact
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- name: internallossevent
+  domain: lsm
+  family: loss-event-management
+  resource_path: /lsm/internallossevent
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmInternalLossEvent.html
+- name: approvalrule
+  domain: lsm
+  family: loss-event-management
+  resource_path: /lsm/approvalrule
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmLossRule.html
+- name: riskeventtypemapping
+  domain: lsm
+  family: loss-event-management
+  resource_path: /lsm/riskeventtypemapping
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- name: metricdata
+  domain: met
+  family: metrics
+  resource_path: /met/metricdata
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html
+- name: metric
+  domain: met
+  family: metrics
+  resource_path: /met/metric
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDefinition.html
+- name: testselfassessmentplan
+  domain: cmp
+  family: self-assessment-testing
+  resource_path: /cmp/testselfassessmentplan
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpManageTestPlan.html
+- name: questionnaire
+  domain: qsm
+  family: surveys
+  resource_path: /qsm/questionnaire
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmCreateQuestnr.html
+- name: surveyscorecardcertification
+  domain: qsm
+  family: surveys
+  resource_path: /qsm/surveyscorecardcertification
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- name: engagement
+  domain: ren
+  family: regulatory-engagements
+  resource_path: /ren/engagement
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenEngagement.html
+- name: task
+  domain: ren
+  family: regulatory-engagements
+  resource_path: /ren/task
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- name: riskassessmenttask
+  domain: rsk
+  family: risk-assessments
+  resource_path: /rsk/riskassessmenttask
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- name: setupriskaggregationweights
+  domain: rsk
+  family: risk-assessments
+  resource_path: /rsk/setupriskaggregationweights
+  identifier: ObjectID (path parameter `id`, type String)
+  operations: 6
+  surface:
+  - collections
+  - create
+  - creations
+  - get
+  - patch
+  - updates
+  reference: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html
+relationships:
+- from: grc/risk
+  to: grc/control
+  type: has_many
+  via: Relationships section (OrbRelationships / Msai relationships group on the Risk object)
+  confidence: medium
+  evidence: RiskOrbRelationships + RiskMsai*Relationships definitions in https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+- from: grc/control
+  to: grc/evidence
+  type: has_many
+  via: Relationships section on the Control object
+  confidence: medium
+  evidence: ControlOrbRelationships in https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcControl.html
+- from: grc/requirement
+  to: grc/standard
+  type: belongs_to
+  via: Relationships section on the Requirement object
+  confidence: medium
+  evidence: RequirementOrbRelationships in https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRequirement.html
+- from: grc/requirement
+  to: grc/regulatorybody
+  type: belongs_to
+  via: Relationships section on the Requirement object
+  confidence: medium
+  evidence: MsGrcRequirement.html / MsGrcRegulatoryBody.html
+- from: grc/asset
+  to: grc/assetclass
+  type: belongs_to
+  via: Classification / Relationships sections on the Asset object
+  confidence: medium
+  evidence: AssetMsai136Classification, AssetOrbRelationships in https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcAsset.html
+- from: lsm/internallossevent
+  to: lsm/impact
+  type: has_many
+  via: Impacts resource is a sibling endpoint keyed to the loss event
+  confidence: medium
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmImpacts.html
+- from: lsm/internallossevent
+  to: lsm/riskeventtypemapping
+  type: has_many
+  via: Risk / regulatory event-type mapping resource
+  confidence: medium
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MsLsmRskRegMap.html
+- from: met/metricdata
+  to: met/metric
+  type: belongs_to
+  via: Metric data entries are posted against a metric definition
+  confidence: high
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetDataEntry.html and MsMetDefinition.html
+- from: rsk/riskassessmenttask
+  to: grc/risk
+  type: belongs_to
+  via: Risk assessment tasks assess a GRC Foundation Risk
+  confidence: medium
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskAssessmentTask.html
+- from: rsk/setupriskaggregationweights
+  to: grc/risk
+  type: belongs_to
+  via: Aggregation weights are configured over the risk hierarchy
+  confidence: medium
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskDefineWeights.html
+- from: ren/task
+  to: ren/engagement
+  type: belongs_to
+  via: Tasks are raised under a regulatory engagement
+  confidence: high
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenTask.html
+- from: qsm/surveyscorecardcertification
+  to: qsm/questionnaire
+  type: belongs_to
+  via: A survey/scorecard/certification campaign initiates a questionnaire
+  confidence: high
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmInitiateQuestnr.html
+- from: cmp/testselfassessmentplan
+  to: grc/control
+  type: has_many
+  via: Test/self-assessment plans drive control testing
+  confidence: medium
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpCMP-API-Overview.html
+- from: grc/exception
+  to: grc/control
+  type: belongs_to
+  via: Exceptions are raised against controls/requirements
+  confidence: medium
+  evidence: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcException.html
+caveat: Relationship rows are DERIVED from definition names and the module overviews, not from a $ref
+  graph in a published spec. Confidence is recorded per row and is never `high` unless the docs state
+  the link in prose.

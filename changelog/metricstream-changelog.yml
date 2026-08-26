@@ -1,0 +1,71 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  https://www.metricstream.com/blog (product-update posts) and
+  https://www.metricstream.com/about-us/newsroom.htm, read 2026-08-25.
+summary: >-
+  MetricStream has NO developer-facing API changelog or release-notes feed. Product releases are
+  announced as marketing blog posts and press releases, named after rivers (Arno, Brazos, Colorado,
+  Danube, Euphrates) with an "Update N" counter. Those posts do occasionally name API changes, so
+  they are the only public record of API evolution — which is exactly what the API documentation
+  itself warns about ("Owing to continuous releases and patches, APIs are constantly evolving...
+  For the latest updates, contact MetricStream Support team").
+scheme: named platform release + numbered update (e.g. "Euphrates-II Update 7"), announced monthly-ish
+current_release: Euphrates-II Update 7
+current_release_date: '2026-06-11'
+developer_changelog: false
+release_notes_url: null
+public_feed: https://www.metricstream.com/blog
+entries:
+- version: Euphrates-II Update 7
+  date: '2026-06-11'
+  title: 'What''s New in MetricStream''s AI-First Connected GRC: May 2026 Product Updates'
+  url: https://www.metricstream.com/blog/whats-new-in-metricstream-ai-first-connected-grc.html
+  breaking: unknown
+  api_relevant: true
+  highlights:
+  - MetricStream Assistant — embedded conversational AI across workflows
+  - Policy Assistant — grounded Q&A over approved policy content with source citation
+  - AI Survey Autofill — drafts questionnaire responses from reference documents with confidence
+    scores and citations
+  - UI/UX modernization for Third-Party Risk, Regulatory Engagement and Case Management
+  - Crown Jewel asset visibility filters for compliance gap and risk analysis
+  - Internal Audit — AI content refinement and faster checklist creation
+  - 'Platform: transparent form locking, OAuth 2.0 integration, technology stack updates'
+  api_changes:
+  - Low-Code API enhancements for configuring Tree and Cartridge menu labels
+  - New Document Reasoning API for extracting structured intelligence from complex documents
+  - OAuth 2.0 integration added at the platform layer
+- version: April 2026 release (unnamed in post)
+  date: '2026-04-07'
+  title: Latest Release of AI-Powered GRC — Faster, Smarter, More Intuitive Decisions
+  url: https://www.metricstream.com/blog/latest-release-of-ai-powered-grc-faster-smarter-more-intuitive-decisions.html
+  breaking: unknown
+  api_relevant: true
+  highlights:
+  - AI Model Gateway and LLM configuration with governance controls and data-residency enforcement
+  - Control description refinement (5Ws / STAR)
+  - Automated red-flag identification on out-of-threshold survey responses
+  - AI-generated regulatory alert applicability assessment and summarization
+  - Policy portal redesign with five-level hierarchical editor
+  - Business Continuity Gantt charts and RTO/RPO visibility
+  - Consolidated compliance-testing scorecard across IT/Cyber modules
+  api_changes:
+  - New Summarization API (inference)
+  - New Open Prompt API (inference)
+  - Model Gateway for multi-LLM integration
+prior_named_releases:
+- name: Danube
+  url: https://www.metricstream.com/pressNews/pr-994-metricstream-danube-software-release.html
+- name: Colorado
+  url: https://www.metricstream.com/blog/colorado-release-whats-next-third-party-risk.html
+- name: Brazos
+  url: https://www.metricstream.com/pressNews/pr-978-Brazos-software-release.htm
+- name: Arno
+  url: https://www.metricstream.com/pressNews/pr-968-Arno-release-platform-and-products-thive-on-risk.htm
+- name: Euphrate
+  url: https://www.metricstream.com/blog/euphrate-release-6-innovations-to-power-grc.html
+gap: >-
+  The Business REST API reference pages under assets.metricstream.com carry no date, no version
+  history and no "what changed" section, and the 27 module contracts are all still stamped V1 while
+  the runtime API version is 7.x. A consumer cannot tell when a documented operation last changed.

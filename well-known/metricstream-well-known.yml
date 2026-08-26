@@ -1,0 +1,106 @@
+generated: '2026-08-25'
+method: probed
+source: live HTTPS probes of every /.well-known/ path on each MetricStream host named
+  in apis.yml, 2026-08-25
+summary: >-
+  MetricStream serves NO /.well-known/ documents. Every one of the nine canonical paths
+  was probed on all three of its public hosts (27 probes) and every one returned 404.
+  This file records a probed ABSENCE. No `WellKnown` and no `SecurityTxt` pointer is
+  emitted in apis.yml and none should be added by a later round — the pointer would
+  assert the provider serves a surface it does not serve. Note that www.metricstream.com
+  and info.metricstream.com return a full HTML 404 page body (119KB / 17KB) with the 404
+  status, so a body-length check alone would be misleading; the status code is correct.
+checked: '2026-08-25'
+hosts:
+- host: www.metricstream.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/mcp.json
+    status: 404
+    file: null
+- host: assets.metricstream.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/mcp.json
+    status: 404
+    file: null
+- host: info.metricstream.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+  - path: /.well-known/mcp.json
+    status: 404
+    file: null
+recommendation: >-
+  MetricStream sells IT & cyber compliance software; publishing an RFC 9116 /.well-known/security.txt
+  and an RFC 9727 /.well-known/api-catalog pointing at
+  https://www.metricstream.com/api-developer-portal.html would cost nothing and would make its own
+  posture match the practice it sells.

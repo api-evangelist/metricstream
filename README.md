@@ -64,5 +64,24 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-MetricStream is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/metricstream_stock/
+MetricStream is a San Jose, California enterprise software company and a market leader in integrated
+Governance, Risk, and Compliance (GRC) management, serving large regulated organizations across banking
+and financial services, insurance, healthcare, life sciences, energy, utilities, telecom and manufacturing.
+
+## What this profile found (2026-08-25)
+
+MetricStream publishes a **public, unauthenticated API reference** — 34 swagger-codegen HTML pages under
+`assets.metricstream.com/pdf/Developer-Portal/` documenting **204 operations across 8 API families**
+(GRC Foundation, Issues, Loss Event Management, Metrics, Risk Assessments, Regulatory Engagements,
+Surveys, Self Assessment & Testing) over **34 GRC entities**, each with the same six-operation surface.
+It also serves a real `llms.txt`.
+
+It does **not** publish a downloadable OpenAPI/Swagger document, an authentication scheme, rate limits,
+an error-code registry, a `/.well-known/security.txt`, a status page, a deprecation policy, or any
+pricing. The gap between "a complete 204-operation reference" and "a developer can make a first call"
+is one page: the authentication scheme.
+
+- Developer portal: https://www.metricstream.com/developer-portal.html
+- API reference index: https://www.metricstream.com/api-developer-portal.html
+- Platform APIs: https://www.metricstream.com/platform/apis.htm
+- Trust Center: https://www.metricstream.com/about-us/trust-center.htm

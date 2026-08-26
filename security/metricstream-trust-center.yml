@@ -1,0 +1,66 @@
+generated: '2026-08-25'
+method: searched
+probe: true
+source: https://www.metricstream.com/about-us/trust-center.htm
+url: https://www.metricstream.com/about-us/trust-center.htm
+summary: >-
+  MetricStream publishes a real Trust Center organised around three areas — Reliability and
+  Performance, Security and Privacy, and Compliance. Evidence is claim-plus-request: the named
+  certifications are stated in a downloadable security-standards document, and the actual SOC 2 /
+  compliance reports are behind request forms.
+certifications:
+- name: ISO 27001
+  type: certification
+  source: https://assets.metricstream.com/pdf/security-standards-metricstream-cloud-v1.pdf
+- name: SOC 2 Type II
+  type: attestation
+  source: https://assets.metricstream.com/pdf/security-standards-metricstream-cloud-v1.pdf
+- name: HIPAA
+  type: attestation
+  source: https://assets.metricstream.com/pdf/security-standards-metricstream-cloud-v1.pdf
+audit_cadence: annual, certified third-party security assessors
+resources:
+- name: Security Standards for MetricStream Cloud (Ver 1.2, effective 2024-01-11)
+  url: https://assets.metricstream.com/pdf/security-standards-metricstream-cloud-v1.pdf
+  status: 200
+  gated: false
+  note: >-
+    Publicly served from MetricStream's own CDN and linked from the Trust Center, though the document
+    itself is marked proprietary/confidential on its cover page.
+- name: Shared Responsibility and Cloud Security
+  url: https://www.metricstream.com/shared-responsibility-and-cloud-security
+  status: 200
+  gated: false
+- name: Request Security Report
+  url: https://info.metricstream.com/security-and-compliance.html
+  status: 200
+  gated: true
+  note: lead form
+- name: Request Compliance Reports
+  url: https://info.metricstream.com/compliance-report-request.html
+  status: 200
+  gated: true
+  note: lead form
+- name: Privacy Policy
+  url: https://www.metricstream.com/about-us/privacy-policy.htm
+  status: 200
+  gated: false
+- name: Performance and Scalability whitepaper
+  url: https://info.metricstream.com/performance-and-scalability-white-paper.html
+  gated: true
+security_advisory_practice: >-
+  Historic CVE advisories (Apache Log4j CVE-2021-44228, Spring4Shell, the Okta/Lapsus$ incident) were
+  published as Trust Center links rather than on a status service.
+vulnerability_management_published: true
+vulnerability_management_note: >-
+  The Security Standards document publishes concrete remediation SLAs — monthly vulnerability
+  assessments, critical vulnerabilities closed "as soon as possible without any undue delay" with a
+  verification rescan, high severity within 30 days, medium/low prioritised by customer impact —
+  and a 48-hour breach/incident notification commitment. That is a stronger published commitment
+  than most vendors make, and it is the reason the vulnerability-disclosure gap below is notable.
+corrections:
+  note: >-
+    An earlier automated pass on this repo recorded "PCI DSS, HIPAA, GDPR" as MetricStream
+    certifications. Those strings come from the site's Solutions > Frameworks navigation (CCPA, CMMC,
+    COSO, HIPAA, ISO, NIST, PCI DSS) — regulatory content MetricStream SELLS, not certifications it
+    HOLDS. Corrected by hand against the Security Standards document on 2026-08-25.

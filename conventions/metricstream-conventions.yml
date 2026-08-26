@@ -1,0 +1,144 @@
+generated: '2026-08-25'
+method: searched
+source: >-
+  The MetricStream Business API module overview pages — e.g.
+  https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html,
+  https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcGRC%20API%20Overview.html,
+  https://assets.metricstream.com/pdf/Developer-Portal/MsCmpCMP-API-Overview.html — plus
+  the 34 reference pages under the same prefix, read 2026-08-25.
+summary: >-
+  MetricStream states its cross-cutting REST conventions explicitly in every module overview page,
+  which is unusual and good. What it does NOT publish is anything about idempotency, dry-run,
+  rate limiting, or reversal — and the write surface is large (170 of 204 operations are POST or
+  PATCH, including bulk creates), so those absences are load-bearing for an agent.
+base_url:
+  form: http(s)://[METRICSTREAM_INSTANCE]/metricstream/b2b/api/[EXTERNAL_API_VERSION]/[RESOURCE]
+  templated: true
+  reason: >-
+    MetricStream is deployed as a multi-instance SaaS (and on-premises); there is no single shared
+    api.metricstream.com host. The instance hostname is the customer's own. The docs give
+    https://test.metricstream.com/metricstream/b2b/api/7.0/obs/observations as the worked example
+    (that host does not resolve publicly — probed 2026-08-25, DNS failure).
+  documented_at: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+transport:
+  protocol: HTTPS
+  note: >-
+    "Clients make standard HTTP requests over an SSL and should validate the certificate of
+    MetricStream endpoint over which they communicate." — module overview, verbatim.
+  content_type: application/json
+  accept: application/json
+authentication:
+  style: instance credentials, scheme not published
+  documented: partial
+  see: authentication/metricstream-authentication.yml
+authorization:
+  model: activity-based
+  documented: true
+  note: >-
+    "Authorization is built in, for the REST endpoints using activities, to prevent unauthorized
+    access." Authorization failures surface as 403 Forbidden - Insufficient user privileges.
+versioning:
+  scheme: major.minor in the URL path segment (EXTERNAL_API_VERSION), e.g. 7.0, 7.1
+  documented: true
+  rules:
+  - The client and server must be on the same [major] version.
+  - The [minor] version may differ, but the client may only request a LOWER minor than the server.
+  - Minor versions are compared as fixed-width left-zero-padded numerals (1.0 -> 10000, 1.1 -> 10001,
+    1.15 -> 10015), so 1.15 sorts above 1.1.
+  per_module_version: >-
+    Separately, each module's reference page declares its own basePath version segment — e.g.
+    /MS_GRC_RISK/V1, /MS_LSM_IMPACTS/V1. All 27 module basePaths observed are at V1.
+  source: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcGRC%20API%20Overview.html
+pagination:
+  style: limit/offset
+  documented: true
+  params:
+  - limit
+  - offset
+  note: >-
+    "Usage of standard query parameters, such as 'limit' and 'offset' for large collections, across
+    all endpoints." The docs do NOT publish the default or maximum page size, and the reference pages
+    do not render limit/offset as declared parameters on any of the 204 operations.
+  response_fields: not published
+sorting:
+  documented: true
+  note: >-
+    "Standardized conventions to represent sorting of data for columns, in either Ascending or
+    Descending orders." The parameter NAME and value grammar are not published.
+bulk:
+  documented: true
+  note: >-
+    Every one of the 34 entities exposes a parallel bulk surface — POST /bulk/{domain}/{entity}
+    (creations) and PATCH /bulk/{domain}/{entity} (updates) — and a POST /collections/{domain}/{entity}
+    read-by-IDs. 102 of the 204 operations are bulk operations.
+  partial_failure_semantics: not published
+  note_on_risk: >-
+    A bulk create with no documented idempotency key and no documented partial-failure envelope is
+    the single riskiest agent surface in this API.
+scheduling:
+  documented: true
+  note: >-
+    MetricStream's platform APIs page describes a built-in scheduler for "systematic bulk request
+    processing and periodic data exchange" — https://www.metricstream.com/platform/apis.htm
+idempotency:
+  supported: unknown
+  documented: false
+  header: null
+  note: >-
+    No idempotency key, request-id echo, or replay-safety statement appears anywhere in the public
+    API documentation. Creates are POST and return 200 with the created object; there is no
+    documented way for a client to retry a create safely after a timeout. No `Idempotency` pointer
+    is emitted in apis.yml — emitting one would assert a guarantee MetricStream has not made.
+dry_run_mode:
+  supported: unknown
+  documented: false
+  note: No preview/validate-only mode is documented on any operation.
+request_id_tracing:
+  documented: false
+  note: No correlation-id or request-id header is documented.
+field_expansion:
+  documented: false
+sparse_fieldsets:
+  documented: false
+metadata:
+  documented: false
+rate_limit_signaling:
+  documented: false
+  see: rate-limits/metricstream-rate-limits.yml
+error_envelope:
+  documented: false
+  see: errors/metricstream-problem-types.yml
+reversibility:
+  grade: undocumented
+  write_surface: true
+  write_operation_count: 170
+  read_operation_count: 34
+  note: >-
+    MetricStream's Business REST APIs are a WRITE surface — 102 POST and 68 PATCH operations against
+    34 GRC entities, including bulk creates and bulk updates. The public documentation publishes NO
+    reversal path and NO reversal window. There is no DELETE operation on any of the 204 published
+    operations; the module overview pages mention DELETE in prose for two resources
+    (DELETE /pdms/bookmarks/delete, DELETE /met/metric/{ObjectID}) but neither is rendered as an
+    operation in the reference pages, so an agent cannot rely on it. There is likewise no cancel,
+    void, reverse, undo, rollback or restore operation, and no stated retention or soft-delete window.
+    An agent that PATCHes a Risk, a Control or an Internal Loss Event has no documented way to put the
+    prior value back, and no way to know whether the platform kept it. Given these records feed
+    regulatory reporting and audit trails, that is the most consequential documentation gap on this
+    API surface.
+  reversal_operations: []
+  windows: []
+  evidence:
+  - url: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcRisk.html
+    finding: six operations (collections/create/creations/get/patch/updates) — no delete, no reversal
+  - url: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
+    finding: prose names DELETE for bookmarks only; no reversal window stated anywhere
+  recommendation: >-
+    Publishing the retention/undo semantics MetricStream's platform almost certainly already has
+    (GRC platforms keep full audit history by design) would move this from `undocumented` to
+    `verified` at no engineering cost.
+cross_links:
+  errors: errors/metricstream-problem-types.yml
+  lifecycle: lifecycle/metricstream-lifecycle.yml
+  authentication: authentication/metricstream-authentication.yml
+  rate_limits: rate-limits/metricstream-rate-limits.yml
+  data_model: data-model/metricstream-data-model.yml
