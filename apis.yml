@@ -1,18 +1,16 @@
 aid: metricstream
 name: MetricStream
-description: MetricStream is a San Jose, California based enterprise software company
-  and a market leader in integrated Governance, Risk, and Compliance (GRC) management,
-  serving large regulated organizations across banking and financial services, insurance,
-  healthcare, life sciences, energy, utilities, telecom, technology and manufacturing.
-  Its AI-first Connected GRC platform unifies enterprise and operational risk, regulatory
-  and corporate compliance, policy and document management, internal audit and SOX,
-  IT and cyber risk, third-party and vendor risk, operational resilience and business
-  continuity, ESG, and case and incident management on one data core. MetricStream
-  publishes a public API developer portal describing its Business REST APIs — a family
-  of OpenAPI-derived REST modules covering GRC Foundation objects, Issues, Loss Event
-  Management, Metrics, Risk Assessments, Regulatory Engagements, Surveys and Self Assessment
-  & Testing — that customers, partners and internal developers use to move GRC data
-  in and out of a MetricStream instance over HTTPS.
+description: MetricStream is a San Jose, California based enterprise software company and a market leader
+  in integrated Governance, Risk, and Compliance (GRC) management, serving large regulated organizations
+  across banking and financial services, insurance, healthcare, life sciences, energy, utilities, telecom,
+  technology and manufacturing. Its AI-first Connected GRC platform unifies enterprise and operational
+  risk, regulatory and corporate compliance, policy and document management, internal audit and SOX, IT
+  and cyber risk, third-party and vendor risk, operational resilience and business continuity, ESG, and
+  case and incident management on one data core. MetricStream publishes a public API developer portal
+  describing its Business REST APIs — a family of OpenAPI-derived REST modules covering GRC Foundation
+  objects, Issues, Loss Event Management, Metrics, Risk Assessments, Regulatory Engagements, Surveys and
+  Self Assessment & Testing — that customers, partners and internal developers use to move GRC data in
+  and out of a MetricStream instance over HTTPS.
 url: https://raw.githubusercontent.com/api-evangelist/metricstream/refs/heads/main/apis.yml
 deliveryModel:
   model: saas
@@ -78,13 +76,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 apis:
-- aid: metricstream-grc-foundation
+- aid: metricstream:metricstream-grc-foundation
   name: MetricStream GRC Foundation APIs
-  description: Business REST APIs over the GRC Foundation object model — Area of Compliance,
-    Asset, Asset Class, Control, Evidence, Exception, Financial Accounts, Function,
-    Framework/Model Reference, Objectives, Process, Product, Question & Procedure,
-    Reference, Regulatory Body, Requirement, Risk and Standard. Each entity exposes
-    the same six-operation surface (single read, single create, single patch, plus
+  description: Business REST APIs over the GRC Foundation object model — Area of Compliance, Asset, Asset
+    Class, Control, Evidence, Exception, Financial Accounts, Function, Framework/Model Reference, Objectives,
+    Process, Product, Question & Procedure, Reference, Regulatory Body, Requirement, Risk and Standard.
+    Each entity exposes the same six-operation surface (single read, single create, single patch, plus
     bulk collections read, bulk create and bulk patch), for 108 documented operations.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcGRC%20API%20Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
@@ -98,11 +95,11 @@ apis:
     url: https://www.metricstream.com/api-developer-portal.html
   - type: Documentation
     url: https://assets.metricstream.com/pdf/Developer-Portal/GRCF_API/MsGrcGRC%20API%20Overview.html
-- aid: metricstream-issues
+- aid: metricstream:metricstream-issues
   name: MetricStream Issues APIs
-  description: Business REST APIs for the Issues module — reporting issues and viewing
-    issue details, so first-line users and upstream systems can flag weaknesses, gaps
-    in internal controls and process deficiencies into MetricStream.
+  description: Business REST APIs for the Issues module — reporting issues and viewing issue details,
+    so first-line users and upstream systems can flag weaknesses, gaps in internal controls and process
+    deficiencies into MetricStream.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
@@ -113,11 +110,11 @@ apis:
     url: https://assets.metricstream.com/pdf/Developer-Portal/MsIsmISM-API-Overview.html
   - type: APIReference
     url: https://assets.metricstream.com/pdf/Developer-Portal/Issues_API/MsIsmIssue.html
-- aid: metricstream-loss-event-management
+- aid: metricstream:metricstream-loss-event-management
   name: MetricStream Loss Event Management APIs
-  description: Business REST APIs for operational loss data — internal and external
-    loss events, impacts, approval (loss) rules, default currency configuration and
-    risk/regulatory event type mapping. 36 documented operations across six resources.
+  description: Business REST APIs for operational loss data — internal and external loss events, impacts,
+    approval (loss) rules, default currency configuration and risk/regulatory event type mapping. 36 documented
+    operations across six resources.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MslsmLSM%20API%20Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
@@ -126,11 +123,10 @@ apis:
   properties:
   - type: Documentation
     url: https://assets.metricstream.com/pdf/Developer-Portal/Loss_Event_Managment_API/MslsmLSM%20API%20Overview.html
-- aid: metricstream-metrics
+- aid: metricstream:metricstream-metrics
   name: MetricStream Metrics APIs
-  description: Business REST APIs for KRI/KPI metric definitions and metric data entry
-    — create and maintain metric definitions and post metric data points into the GRC
-    platform.
+  description: Business REST APIs for KRI/KPI metric definitions and metric data entry — create and maintain
+    metric definitions and post metric data points into the GRC platform.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetMET%20API%20Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
@@ -139,10 +135,10 @@ apis:
   properties:
   - type: Documentation
     url: https://assets.metricstream.com/pdf/Developer-Portal/Metric_API/MsMetMET%20API%20Overview.html
-- aid: metricstream-risk-assessments
+- aid: metricstream:metricstream-risk-assessments
   name: MetricStream Risk Assessments APIs
-  description: Business REST APIs for risk assessment tasks and the setup of risk aggregation
-    weights used when rolling assessment scores up a risk hierarchy.
+  description: Business REST APIs for risk assessment tasks and the setup of risk aggregation weights
+    used when rolling assessment scores up a risk hierarchy.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskRSK%20API%20Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
@@ -150,10 +146,10 @@ apis:
   properties:
   - type: Documentation
     url: https://assets.metricstream.com/pdf/Developer-Portal/Risk_Assemment_API/MsRskRSK%20API%20Overview.html
-- aid: metricstream-regulatory-engagements
+- aid: metricstream:metricstream-regulatory-engagements
   name: MetricStream Regulatory Engagements APIs
-  description: Business REST APIs for the Regulatory Engagement module — engagements
-    with regulators and the tasks raised under them.
+  description: Business REST APIs for the Regulatory Engagement module — engagements with regulators and
+    the tasks raised under them.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenREN%20API%20Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
@@ -162,10 +158,10 @@ apis:
   properties:
   - type: Documentation
     url: https://assets.metricstream.com/pdf/Developer-Portal/Regulatory_Engg_API/MsRenREN%20API%20Overview.html
-- aid: metricstream-surveys
+- aid: metricstream:metricstream-surveys
   name: MetricStream Surveys APIs
-  description: Business REST APIs for the Survey/Questionnaire module — creating questionnaires
-    and initiating survey, scorecard and certification campaigns.
+  description: Business REST APIs for the Survey/Questionnaire module — creating questionnaires and initiating
+    survey, scorecard and certification campaigns.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmQSM-API-Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
@@ -174,10 +170,10 @@ apis:
   properties:
   - type: Documentation
     url: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmQSM-API-Overview.html
-- aid: metricstream-self-assessment-testing
+- aid: metricstream:metricstream-self-assessment-testing
   name: MetricStream Self Assessment & Testing APIs
-  description: Business REST APIs for the Compliance module's test and self-assessment
-    plans — creating and maintaining the plans that drive control testing cycles.
+  description: Business REST APIs for the Compliance module's test and self-assessment plans — creating
+    and maintaining the plans that drive control testing cycles.
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpCMP-API-Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
@@ -245,11 +241,10 @@ x-enrichment:
 x-coverage:
   state: covered
   reason: no-machine-readable-spec
-  detail: >-
-    MetricStream publishes a real, public, unauthenticated API reference — 34 swagger-codegen HTML
-    pages under assets.metricstream.com/pdf/Developer-Portal/ describing 204 operations across 8 API
-    families — but no downloadable OpenAPI/Swagger document exists at any probed location, so the
-    catalog holds the API surface as derived artifacts rather than as a contract.
+  detail: MetricStream publishes a real, public, unauthenticated API reference — 34 swagger-codegen HTML
+    pages under assets.metricstream.com/pdf/Developer-Portal/ describing 204 operations across 8 API families
+    — but no downloadable OpenAPI/Swagger document exists at any probed location, so the catalog holds
+    the API surface as derived artifacts rather than as a contract.
   evidence:
   - url: https://www.metricstream.com/api-developer-portal.html
     status: 200
