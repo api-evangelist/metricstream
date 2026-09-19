@@ -89,6 +89,11 @@ apis:
   - GRC
   - Risk
   - Compliance
+  - Control
+  tags_raw:
+  - GRC
+  - Risk
+  - Compliance
   - Controls
   properties:
   - type: APIReference
@@ -165,6 +170,9 @@ apis:
   humanURL: https://assets.metricstream.com/pdf/Developer-Portal/MsQsmQSM-API-Overview.html
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
+  - Surveys
+  - Questionnaire
+  tags_raw:
   - Surveys
   - Questionnaires
   properties:
