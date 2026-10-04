@@ -47,14 +47,14 @@ modified: '2026-08-25'
 tags:
 - Company
 - Governance
-- Risk
+- Risk Management
 - Compliance
 - GRC
 - Audit
 - Enterprise Software
-- Regulatory Technology
+- RegTech
 - Cyber Risk
-- Third-Party Risk
+- Third-Party Risk Management
 - Operational Resilience
 - ESG
 tags_raw:
@@ -70,6 +70,7 @@ tags_raw:
 - Third Party Risk
 - Operational Resilience
 - ESG
+- Third-Party Risk
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -87,7 +88,7 @@ apis:
   baseURL: https://{metricstream-instance}/metricstream/b2b/api/7.0
   tags:
   - GRC
-  - Risk
+  - Risk Management
   - Compliance
   - Control
   tags_raw:
