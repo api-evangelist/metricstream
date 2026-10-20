@@ -1,0 +1,6 @@
+generated: '2026-10-20'
+method: probed
+generator: harvest-llms.py
+source: https://www.metricstream.com/llms.txt
+bytes: 42231
+note: saved verbatim; the provider's own document

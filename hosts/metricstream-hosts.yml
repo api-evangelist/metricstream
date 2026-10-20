@@ -1,0 +1,124 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 4
+  other_domain: 4
+  platform: 1
+  roles:
+  - api
+  - marketing
+  - other
+  - source
+  - website
+hosts:
+- host: api.metricstream.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: metricstream.com
+  role: api
+  relation: own
+- host: assets.metricstream.com
+  found_by:
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types: []
+  serves:
+  - docs
+  registrable_domain: metricstream.com
+  role: other
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: info.metricstream.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - Pricing
+  serves:
+  - docs
+  registrable_domain: metricstream.com
+  role: marketing
+  relation: own
+- host: northamerica.risklive.net
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: risklive.net
+  role: other
+  relation: other-domain
+- host: www.gartner.com
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: gartner.com
+  role: other
+  relation: other-domain
+- host: www.infosecworldusa.com
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: infosecworldusa.com
+  role: other
+  relation: other-domain
+- host: www.isaca.org
+  found_by:
+  - docs-index
+  types: []
+  serves:
+  - docs
+  registrable_domain: isaca.org
+  role: other
+  relation: other-domain
+- host: www.metricstream.com
+  found_by:
+  - pointer
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Newsroom
+  - Website
+  - DeveloperPortal
+  - APIReference
+  - Documentation
+  - Blog
+  - Support
+  - SignUp
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  - cdn
+  vendor: fastly
+  registrable_domain: metricstream.com
+  role: website
+  relation: own

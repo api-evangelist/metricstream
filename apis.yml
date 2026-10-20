@@ -1,5 +1,7 @@
 aid: metricstream
+
 name: MetricStream
+
 description: MetricStream is a San Jose, California based enterprise software company and a market leader
   in integrated Governance, Risk, and Compliance (GRC) management, serving large regulated organizations
   across banking and financial services, insurance, healthcare, life sciences, energy, utilities, telecom,
@@ -11,7 +13,9 @@ description: MetricStream is a San Jose, California based enterprise software co
   objects, Issues, Loss Event Management, Metrics, Risk Assessments, Regulatory Engagements, Surveys and
   Self Assessment & Testing — that customers, partners and internal developers use to move GRC data in
   and out of a MetricStream instance over HTTPS.
+
 url: https://raw.githubusercontent.com/api-evangelist/metricstream/refs/heads/main/apis.yml
+
 deliveryModel:
   model: saas
   open_source: false
@@ -23,6 +27,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: approval
@@ -38,12 +43,19 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
+
 image: https://www.metricstream.com/sites/default/files/2025-05/metricstream-logo.png
+
 x-type: company
+
 x-source: harvest:secondary-market
+
 specificationVersion: '0.20'
+
 created: '2026-08-25'
+
 modified: '2026-08-25'
+
 tags:
 - Company
 - Governance
@@ -57,6 +69,7 @@ tags:
 - Third-Party Risk Management
 - Operational Resilience
 - ESG
+
 tags_raw:
 - Company
 - Governance
@@ -71,11 +84,73 @@ tags_raw:
 - Operational Resilience
 - ESG
 - Third-Party Risk
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+common:
+- type: Deprecation
+  url: lifecycle/metricstream-lifecycle.yml
+- type: Hosts
+  url: hosts/metricstream-hosts.yml
+- type: IntegrationEdges
+  url: integrations/metricstream-integration-edges.yml
+- type: Vendors
+  url: vendors/metricstream-vendors.yml
+- type: SDKs
+  url: packages/metricstream-packages.yml
+- type: Newsroom
+  url: https://www.metricstream.com/about-us/newsroom/recent-announcements/cyber-resilience-in-the-face-of-breach
+- type: TrustCenter
+  url: security/metricstream-trust-center.yml
+- type: Pricing
+  url: https://info.metricstream.com/ms-pricing.html
+- type: Website
+  url: https://www.metricstream.com/
+- type: DeveloperPortal
+  url: https://www.metricstream.com/developer-portal.html
+- type: APIReference
+  url: https://www.metricstream.com/api-developer-portal.html
+- type: Documentation
+  url: https://www.metricstream.com/platform/apis.htm
+- type: Blog
+  url: https://www.metricstream.com/blog
+- type: GitHubOrganization
+  url: https://github.com/MetricStream
+- type: Support
+  url: https://www.metricstream.com/about-us/lets-talk.html
+- type: SignUp
+  url: https://www.metricstream.com/about-us/get-started.htm
+- type: TermsOfService
+  url: https://www.metricstream.com/customer-agreements
+- type: PrivacyPolicy
+  url: https://www.metricstream.com/about-us/privacy-policy.htm
+- type: Compliance
+  url: conformance/metricstream-conformance.yml
+- type: LLMsTxt
+  url: llms/metricstream-llms.txt
+- type: Packages
+  url: packages/metricstream-packages.yml
+- type: Conformance
+  url: conformance/metricstream-conformance.yml
+- type: ErrorCatalog
+  url: errors/metricstream-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/metricstream-lifecycle.yml
+- type: DomainSecurity
+  url: security/metricstream-domain-security.yml
+- type: Conventions
+  url: conventions/metricstream-conventions.yml
+- type: DataModel
+  url: data-model/metricstream-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: ChangeLog
+  url: changelog/metricstream-changelog.yml
+
 apis:
 - aid: metricstream:metricstream-grc-foundation
   name: MetricStream GRC Foundation APIs
@@ -191,62 +266,8 @@ apis:
   properties:
   - type: Documentation
     url: https://assets.metricstream.com/pdf/Developer-Portal/MsCmpCMP-API-Overview.html
-common:
-- type: TrustCenter
-  url: security/metricstream-trust-center.yml
-- type: Website
-  url: https://www.metricstream.com/
-- type: DeveloperPortal
-  url: https://www.metricstream.com/developer-portal.html
-- type: APIReference
-  url: https://www.metricstream.com/api-developer-portal.html
-- type: Documentation
-  url: https://www.metricstream.com/platform/apis.htm
-- type: Blog
-  url: https://www.metricstream.com/blog
-- type: GitHubOrganization
-  url: https://github.com/MetricStream
-- type: Support
-  url: https://www.metricstream.com/about-us/lets-talk.html
-- type: SignUp
-  url: https://www.metricstream.com/about-us/get-started.htm
-- type: TermsOfService
-  url: https://www.metricstream.com/customer-agreements
-- type: PrivacyPolicy
-  url: https://www.metricstream.com/about-us/privacy-policy.htm
-- type: Compliance
-  url: conformance/metricstream-conformance.yml
-- type: LLMsTxt
-  url: llms/metricstream-llms.txt
-- type: Packages
-  url: packages/metricstream-packages.yml
-- type: Conformance
-  url: conformance/metricstream-conformance.yml
-- type: ErrorCatalog
-  url: errors/metricstream-problem-types.yml
-- type: Lifecycle
-  url: lifecycle/metricstream-lifecycle.yml
-- type: Authentication
-  url: authentication/metricstream-authentication.yml
-- type: DomainSecurity
-  url: security/metricstream-domain-security.yml
-- type: Conventions
-  url: conventions/metricstream-conventions.yml
-- type: DataModel
-  url: data-model/metricstream-data-model.yml
-- type: Plans
-  url: plans/metricstream-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/metricstream-rate-limits.yml
-- type: AgentSkill
-  url: skills/_index.yml
-- type: ChangeLog
-  url: changelog/metricstream-changelog.yml
-x-enrichment:
-  date: '2026-08-25'
-  status: enriched
-  artifacts_added: 21
-  pass: local-v1
+
+
 x-coverage:
   state: covered
   reason: no-machine-readable-spec
@@ -266,3 +287,8 @@ x-coverage:
   - url: https://www.metricstream.com/llms.txt
     status: 200
   checked: '2026-08-25'
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 0
+  pass: local-v5
