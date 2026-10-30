@@ -64,24 +64,120 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-MetricStream is a San Jose, California enterprise software company and a market leader in integrated
-Governance, Risk, and Compliance (GRC) management, serving large regulated organizations across banking
-and financial services, insurance, healthcare, life sciences, energy, utilities, telecom and manufacturing.
+MetricStream is a San Jose, California based enterprise software company and a market leader in integrated Governance, Risk, and Compliance (GRC) management, serving large regulated organizations across banking and financial services, insurance, healthcare, life sciences, energy, utilities, telecom, technology and manufacturing. Its AI-first Connected GRC platform unifies enterprise and operational risk, regulatory and corporate compliance, policy and document management, internal audit and SOX, IT and cyber risk, third-party and vendor risk, operational resilience and business continuity, ESG, and case and incident management on one data core. MetricStream publishes a public API developer portal describing its Business REST APIs — a family of OpenAPI-derived REST modules covering GRC Foundation objects, Issues, Loss Event Management, Metrics, Risk Assessments, Regulatory Engagements, Surveys and Self Assessment & Testing — that customers, partners and internal developers use to move GRC data in and out of a MetricStream instance over HTTPS.
 
-## What this profile found (2026-08-25)
+**Areas:** Company · Governance · Risk Management · Compliance · GRC · Audit · Enterprise Software · RegTech · Cyber Risk · Third-Party Risk Management · Operational Resilience · ESG
 
-MetricStream publishes a **public, unauthenticated API reference** — 34 swagger-codegen HTML pages under
-`assets.metricstream.com/pdf/Developer-Portal/` documenting **204 operations across 8 API families**
-(GRC Foundation, Issues, Loss Event Management, Metrics, Risk Assessments, Regulatory Engagements,
-Surveys, Self Assessment & Testing) over **34 GRC entities**, each with the same six-operation surface.
-It also serves a real `llms.txt`.
+## MetricStream on APIs.io
 
-It does **not** publish a downloadable OpenAPI/Swagger document, an authentication scheme, rate limits,
-an error-code registry, a `/.well-known/security.txt`, a status page, a deprecation policy, or any
-pricing. The gap between "a complete 204-operation reference" and "a developer can make a first call"
-is one page: the authentication scheme.
+Everything profiled for MetricStream is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/metricstream/](https://apis.io/providers/metricstream/)** — or go straight to one of the APIs or properties below.
 
-- Developer portal: https://www.metricstream.com/developer-portal.html
-- API reference index: https://www.metricstream.com/api-developer-portal.html
-- Platform APIs: https://www.metricstream.com/platform/apis.htm
-- Trust Center: https://www.metricstream.com/about-us/trust-center.htm
+### APIs (8)
+
+- [MetricStream GRC Foundation APIs](https://apis.io/apis/metricstream/metricstream-grc-foundation/) — Business REST APIs over the GRC Foundation object model — Area of Compliance, Asset, Asset Class, Control, Evidence, Exception, Financial Accounts,…
+- [MetricStream Issues APIs](https://apis.io/apis/metricstream/metricstream-issues/) — Business REST APIs for the Issues module — reporting issues and viewing issue details, so first-line users and upstream systems can flag weaknesses, gaps in…
+- [MetricStream Loss Event Management APIs](https://apis.io/apis/metricstream/metricstream-loss-event-management/) — Business REST APIs for operational loss data — internal and external loss events, impacts, approval (loss) rules, default currency configuration and…
+- [MetricStream Metrics APIs](https://apis.io/apis/metricstream/metricstream-metrics/) — Business REST APIs for KRI/KPI metric definitions and metric data entry — create and maintain metric definitions and post metric data points into the GRC…
+- [MetricStream Risk Assessments APIs](https://apis.io/apis/metricstream/metricstream-risk-assessments/) — Business REST APIs for risk assessment tasks and the setup of risk aggregation weights used when rolling assessment scores up a risk hierarchy.
+- [MetricStream Regulatory Engagements APIs](https://apis.io/apis/metricstream/metricstream-regulatory-engagements/) — Business REST APIs for the Regulatory Engagement module — engagements with regulators and the tasks raised under them.
+- [MetricStream Surveys APIs](https://apis.io/apis/metricstream/metricstream-surveys/) — Business REST APIs for the Survey/Questionnaire module — creating questionnaires and initiating survey, scorecard and certification campaigns.
+- [MetricStream Self Assessment & Testing APIs](https://apis.io/apis/metricstream/metricstream-self-assessment-testing/) — Business REST APIs for the Compliance module's test and self-assessment plans — creating and maintaining the plans that drive control testing cycles.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [metricstream-mcp.yml](https://apis.io/servers/metricstream/metricstream-mcp-yml/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Metricstream Authentication](https://apis.io/security/metricstream/metricstream-authentication/)
+- [Metricstream Domain Security](https://apis.io/security/metricstream/metricstream-domain-security/)
+- [Metricstream Trust Center](https://apis.io/security/metricstream/metricstream-trust-center/)
+- [Metricstream Vulnerability Disclosure](https://apis.io/security/metricstream/metricstream-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Metricstream Plans Pricing](https://apis.io/plans/metricstream/metricstream-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Metricstream Rate Limits](https://apis.io/rate-limits/metricstream/metricstream-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.metricstream.com/)
+- [Documentation](https://www.metricstream.com/platform/apis.htm)
+- [API reference](https://www.metricstream.com/api-developer-portal.html)
+- [Pricing](https://info.metricstream.com/ms-pricing.html)
+- [Sign up](https://www.metricstream.com/about-us/get-started.htm)
+- [Support](https://www.metricstream.com/about-us/lets-talk.html)
+- [Blog](https://www.metricstream.com/blog)
+- [Terms of service](https://www.metricstream.com/customer-agreements)
+- [Privacy policy](https://www.metricstream.com/about-us/privacy-policy.htm)
+- [GitHub](https://github.com/MetricStream)
+
+## API Evangelist rating
+
+**Kin Score 35.5** — thin · rubric 0.24.0 · scored 2026-10-20
+
+| Facet | Score |
+|---|---|
+| Discoverability | 80.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 42.3 |
+| Access clarity | 60.5 |
+
+**Agent readiness 6.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 23.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/metricstream/](https://apis.io/providers/metricstream/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for MetricStream: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/metricstream/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
